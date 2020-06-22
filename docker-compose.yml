@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: 'personal-website'
+      POSTGRES_USER: 'personal'
+      POSTGRES_PASSWORD: 'Ingersive1403'
+    ports:
+      - "5432"
+
+  web:
+  
+    depends_on:
+      - db
+    build: .
+    command: bash -c "python3 manage.py migrate && python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+#    environment:
+#      WAIT_HOST: db:5432
+#    volumes:
+#      - .:/root
+    ports:
+      - "8000:8000"
+   

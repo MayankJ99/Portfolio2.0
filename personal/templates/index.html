@@ -1,0 +1,373 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Mayank J.</title>
+        <link rel="stylesheet" href="{% static '/index.css' %} ">
+        <link rel = "icon" href =  
+"logo.png" 
+        type = "image/x-icon"> 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <script src="https://use.fontawesome.com/3d41ee30d1.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link type ="text/css" rel="stylesheet" href="{% static 'css/materialize.css' %}">
+
+    <!-- Compiled and minified JavaScript -->
+      <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+    
+
+      <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no"/>
+
+    </head>
+    <body>
+
+      <div style="margin-bottom: 100px;" class="navbar transparent">
+        <nav style="line-height: 90px;" class="transparent z-depth-0">
+          <div class="nav-wrapper ">
+            <div class="container">
+              <div class="container">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+
+              </div>
+
+            </div>
+
+            <div class="container">
+              <a href="#quotes" class="brand-logo left teal-text text-accent-4 hide-on-small-only">{{ profile.user.first_name }}</a>
+              <ul class="right hide-on-med-and-down">
+                <li><a style="font-size: 1.3rem;" href="#experience" class="teal-text text-accent-4">Experience</a></li>
+                <li><a style="font-size: 1.3rem;" href="#projects" class="teal-text text-accent-4">Projects</a></li>
+                <li><a style="font-size: 1.3rem;" href="#about" class="teal-text text-accent-4">About</a></li>
+                <li><a style="font-size: 1.3rem;" href="#contact" class="teal-text text-accent-4">Contact</a></li>
+        {% if user.is_authenticated %}
+         <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
+         <li><a style="font-size: 1.3rem;" href="{% url 'edit' %}" class="teal-text text-accent-4">Edit Profile</a></li>
+
+        {% endif %}
+
+              </ul>
+            </div>
+           
+          </div>
+        </nav>
+        <div class="container sidenav right" id="mobile-demo">
+          <ul>
+            <li><a style="font-size: 1.3rem;" href="#experience" class="teal-text text-accent-4">Experience</a></li>
+            <li><a style="font-size: 1.3rem;" href="#projects" class="teal-text text-accent-4">Projects</a></li>
+            <li><a style="font-size: 1.3rem;" href="#about" class="teal-text text-accent-4">About</a></li>
+            <li><a style="font-size: 1.3rem;" href="#contact" class="teal-text text-accent-4">Contact</a></li>
+  {% if user.is_authenticated %}
+         <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
+
+        {% endif %}
+          </ul>
+        </div>
+      </div>
+
+{% if user.is_authenticated%}
+       <div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li><a href = "{% url 'work' %}" class="btn-floating blue"><i class="material-icons">work</i> </a></li>
+    <li><a href = "{% url 'create'%}" class="btn-floating green"><i class="material-icons">web_asset</i></a></li>
+    <li><a  href = "{% url 'quote'%}"class="btn-floating red"><i class="material-icons">format_quote</i></a></li>
+
+  </ul>
+</div>
+{% endif%}
+
+ 
+    
+
+      <section id="quotes" class ="section scrollspy" style="margin-bottom: 100px;">
+        
+        <div class="container row">
+        {% if user.is_authenticated %}
+         <h1 class="white-text typewriter "> Logged in </h1>
+         </br>
+        {% endif %}
+          <div class="typewriter">
+            <h1 class="white-text typewriter "> Hi, I'm {{profile.user.first_name}}. </h1>
+          </div>
+
+            {% for quote in quotes %}
+            <h2 class=" white-text center-align-on-small">{{quote.quote}}</h1>
+            {% endfor %}
+        </div>
+
+      </section>
+      
+      <section id="experience" class ="section scrollspy" data-aos="fade-up"
+     data-aos-duration="1000">
+        <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;"> Experience</p>
+          <br>
+<div class="container">
+  <div class="row">
+
+    {% for work in works%}
+        <div class="col l6 s12 m6">
+
+         <div style ="border-radius: 10px;" class="card large transparent z-depth-5 ">
+          <div class="card-image">
+            <a href="#modal1" class="modal-trigger"> <img style ="border-radius: 10px;" src="{{work.cover.url}}"> </a>
+            
+        </div>
+       
+        <div class="card-content">
+          <p class="left-align">{{work.company}}</p>
+          <br>
+          <p class="left-align white-text">{{work.position}}</p>
+          {% if work.end_date %}
+            <p class="left-align white-text">{{work.start_date}} - {{work.end_date}}</p>
+        {% else %}
+        <p class="left-align white-text">{{work.start_date}} - Present</p>
+           
+        </div>
+        <div class="card-action">
+          <a class="teal-text text-accent-4 modal-trigger" href="#work{{work.pk}}">Read More..</a>
+          </div>
+          <div id="work{{ work.pk }}" class="modal grey darken-3">
+            <div class="modal-content">
+              <h3 class="left-align teal-text text-accent-4" >{{work.position}}</h4>
+              <h4 class="left-align teal-text text-accent-4">{{work.company}}</h3>
+  {% if work.end_date %}
+            <p class="left-align white-text">{{work.start_date}} - {{work.end_date}}</p>
+        {% else %}
+        <p class="left-align white-text">{{work.start_date}} - Present</p>
+            {% endif  %}                
+            <p class="left-align white-text">{{work.location}}</p>
+
+                <h5 class="left-align teal-text text-accent-4">Overview</h5>
+                <p class="left-align white-text" >{{work.full_description | linebreaksbr }}</p>
+
+                </br>
+                 {% endif  %}
+
+            {% if user.is_authenticated%}
+            <a class="btn red" href="{% url 'deleteWork' pk=work.pk %}">Delete</a>
+            <a class="btn " href="{% url 'updateWork' pk=work.pk %}">Update</a>
+
+            {% endif%}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  
+
+   
+  </div>
+</div>
+        
+      </section>
+      <br>
+      <br>
+      <br>
+
+      <section id="projects" class ="section scrollspy">
+        <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;">Projects</p>
+        <br>  
+        <div class="container">
+          <div class="row">
+      
+                {% for project in projects%}
+                      <div class="col l6 s12 m6">
+
+              <div style ="border-radius: 10px;" class="card large transparent z-depth-5 ">
+                  <div class="card-image">
+                    <a href="#modal3" class="modal-trigger"> <img style ="border-radius: 10px;"class="responsive-img "src="{{project.cover.url}}"> </a>
+                    
+                </div>
+               
+                <div class="card-content">
+                  <p class="left-align">{{project.name}}</p>
+                  <br>
+                  <br>
+                  <br>
+                  <p class="left-align white-text">{{project.short_description}}</p>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+                <div class="card-action">
+                  <a class="teal-text text-accent-4 modal-trigger" href="#project{{project.pk}}">Read More..</a>
+                  <div id="project{{project.pk}}" class="modal grey darken-3">
+                    <div class="modal-content">
+                      <h3 class="left-align teal-text text-accent-4" >{{project.name}}</h4>
+                        <p class="left-align white-text">{{project.date}}</p>
+        
+                        <h5 class="left-align teal-text text-accent-4">Overview</h5>
+                        <div class=" left-align">
+                            <p class="left-align white-text" >{{project.full_description | linebreaksbr}}</p>
+    
+                          <a href="{{project.link}}" target="_blank"><i class=" material-icons">exit_to_app</i></a>
+                             {% if user.is_authenticated%}
+                        <a class="btn red" href="{% url 'deleteProject' pk=project.pk %}">Delete</a>
+                        <a class="btn btn-danger" href="{% url 'updateProject' pk=project.pk %}">Update</a>
+
+                        {% endif%}
+                        </div>                    
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+                {% endfor%}
+
+            
+
+           
+
+        
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <br><br>
+      <section id="about" class ="section scrollspy" data-aos="fade-up"
+     data-aos-duration="1000">
+        <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;">About Me</p>
+          <br>  
+          <div class="container">
+            <div class="row">
+                <div class="col l4 m12 s12">
+                
+                      <img src="{{profile.profile_pic.url}}" style="height: 150px; width: 150px;" class="circle responsive-img" alt="404">
+
+                 
+                      <p class="teal-text text-accent-4 center-align"> {{profile.user.first_name}} {{profile.user.last_name}}</p>
+                      <p class="white-text center-align">{{profile.location}}</p>
+                      <p class="white-text center-align">{{profile.occupation}}</p>
+
+
+                </div>
+                <div class="col l8 m12 s12">
+                  <p class="white-text center-align">{{profile.bio | linebreaksbr }}</p>
+               
+                </div>
+            </div>
+          </div>
+      </section>
+
+      <section id="contact" class="section scrollspy" data-aos="fade-up"
+     data-aos-duration="1000">
+
+        <h4 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;" >Contact Me!</h3>
+        <br>
+        <br>
+          <div class="container center-align">
+            <div class="row">
+
+                 {% if profile.linkedin%}
+                  <div id="linkedin" class="col l4 m6 s12 center-align">
+              
+                <a href="{{profile.linkedin}}" target="_blank"><img src="{% static 'linkedin.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404">
+                </a>
+                <br>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.linkedin}}" target="_blank">Linkedin</a></h1>
+              </div>
+               {% endif%}
+             
+                 {% if profile.github%}
+                   <div id="github" class="col l4 m6 s12 center-align">
+                <a href="{{profile.github}}" target ="_blank"> <img src="{% static 'github-mark.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404">
+                  <br> </a>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.github}}" target="_blank">Github</a></h1>
+              </div>
+               {% endif%}
+
+            
+                 {% if profile.instagram%}
+                   <div id="insta" class="col l4 m6 s12 center-align">
+                <a href="{{profile.instagram}}" target="_blank"> <img src="{% static 'insta.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404"> </a> 
+                <br>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.instagram}}" target="_blank">Instagram</a></h1>
+              </div>
+               {% endif%}
+
+        
+              <div id="email" class="col l4 m6 s12 center-align">
+                <a href="mailto:{{profile.user.email}}"> <img src="{% static 'email.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404"> </a> 
+                <br>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.user.email}}" target="_blank">Email Me!</a></h1>
+              </div>
+  
+             
+               
+                  <div id="resume" class="col l4 m6 s12 center-align">
+                <a href="{% static 'resume.pdf'%}" target="_blank"> <img src="{% static 'resume.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404"> </a> 
+                <br>
+                <h6><a class = "teal-text text-accent-4 center align" href="resume.pdf" target="_blank">Resume</a></h1>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <section id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l12 m12 s12">
+              <p class="white-text center-align"><em>{{profile.quote}}</em></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+          
+      <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+
+    <script> 
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {edge:'right'});
+  });
+
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+  $(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      hoverEnabled: false
+    });
+  });
+
+  
+      
+    </script>
+    <script>
+        {% if messages %}
+            {% for message in messages %}
+                console.log(message)
+                M.toast({{ message }}, 4000);
+            {% endfor %}
+        {% endif %}
+</script>
+    <script>
+  AOS.init();
+</script>
+</html>
