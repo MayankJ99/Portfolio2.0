@@ -50,6 +50,8 @@
         {% if user.is_authenticated %}
          <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
          <li><a style="font-size: 1.3rem;" href="{% url 'edit' %}" class="teal-text text-accent-4">Edit Profile</a></li>
+        {% else %}
+          <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a></li>
 
         {% endif %}
 
@@ -66,6 +68,8 @@
             <li><a style="font-size: 1.3rem;" href="#contact" class="teal-text text-accent-4">Contact</a></li>
   {% if user.is_authenticated %}
          <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
+ {% else %}
+          <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a></li>
 
         {% endif %}
           </ul>

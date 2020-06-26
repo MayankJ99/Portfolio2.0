@@ -50,6 +50,8 @@
                 <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="teal-text text-accent-4">Contact</a></li>
 {% if user.is_authenticated %}
          <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
+ {% else %}
+          <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a></li>
 
         {% endif %}
               </ul>
@@ -65,6 +67,8 @@
             <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="teal-text text-accent-4">Contact</a></li>
 {% if user.is_authenticated %}
          <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
+ {% else %}
+          <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a></li>
 
         {% endif %}
           </ul>
