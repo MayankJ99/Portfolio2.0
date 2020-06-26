@@ -79,27 +79,27 @@ WSGI_APPLICATION = 'personal_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'personal-website',
-        'USER': 'personal',
-        'PASSWORD': 'Ingersive1403',
-        'HOST': "db",
-        'PORT': '5432'
-
-    },
-    'OPTIONS': {
-        'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'personal-website',
+#         'USER': 'personal',
+#         'PASSWORD': 'Ingersive1403',
+#         'HOST': "db",
+#         'PORT': '5432'
+
+#     },
+#     'OPTIONS': {
+#         'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
+#     },
+# }
 
 
 # Password validation
