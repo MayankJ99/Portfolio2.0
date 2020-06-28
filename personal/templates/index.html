@@ -125,7 +125,7 @@
 
          <div style ="border-radius: 10px;" class="card large transparent z-depth-5 ">
           <div class="card-image">
-            <a href="#modal1" class="modal-trigger"> <img style ="border-radius: 10px;" src="{{work.cover.url}}"> </a>
+            <a href="#work{{work.pk}} class="modal-trigger"> <img style ="border-radius: 10px;" src="{{work.cover.url}}"> </a>
             
         </div>
        
@@ -169,9 +169,9 @@
           </div>
         </div>
       </div>
-   
+    {% comment %} </div> {% endcomment %}
+
     {% endfor %}
- </div>
   
 
    
