@@ -58,7 +58,7 @@ class Project(models.Model):
         return reverse_lazy('personal-index')
         
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['-date']
 
 class Work(models.Model):
     user = models.ForeignKey(CurrentUser, related_name='work' , on_delete=models.CASCADE, null=True)
@@ -80,7 +80,7 @@ class Work(models.Model):
         return reverse('personal-index')
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['-date']
 
 class Intro(models.Model):
     user = models.ForeignKey(CurrentUser, related_name='quote' , on_delete=models.CASCADE, null=True)
