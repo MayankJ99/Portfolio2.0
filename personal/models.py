@@ -80,7 +80,7 @@ class Work(models.Model):
         return reverse('personal-index')
 
     class Meta:
-        ordering = ['-date']
+        ordering = ['-start_date']
 
 class Intro(models.Model):
     user = models.ForeignKey(CurrentUser, related_name='quote' , on_delete=models.CASCADE, null=True)
