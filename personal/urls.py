@@ -1,4 +1,4 @@
-from django.urls import path,re_path
+from django.urls import path,re_path, include
 from . import views
 from django.contrib.auth import views as auth_views
 
@@ -17,6 +17,8 @@ urlpatterns = [
         re_path(r"updateProject/(?P<pk>\d+)/$",views.UpdateProject.as_view(),name="updateProject"),
         re_path(r"updateWork/(?P<pk>\d+)/$",views.UpdateWork.as_view(),name="updateWork"),
         path('edit', views.EditProfile, name='edit'),
+        path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
     
 
 

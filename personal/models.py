@@ -7,6 +7,8 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy, reverse
 import misaka
 from django.db.models import Count
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 from django import template
 
@@ -93,6 +95,18 @@ class Intro(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+class Blog(models.Model):
+    user = models.ForeignKey(CurrentUser, related_name='blogger' , on_delete=models.CASCADE, null=True)
+    created_at = models.DateTimeField(auto_now=True)
+    content = RichTextUploadingField()
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
+
+
+    def __str__(self):
+        return self.content
+
 
 
 

@@ -55,7 +55,10 @@
 
         {% endif %}
 
+
               </ul>
+
+
             </div>
            
           </div>
@@ -104,10 +107,11 @@
             <h1 class="white-text typewriter hide-on-small-only "> Hi, I'm {{profile.user.first_name}}. </h1>
             <h2 class="white-text typewriter hide-on-med-and-up "> Hi, I'm {{profile.user.first_name}}. </h2>
 
+
           </div>
 
             {% for quote in quotes %}
-            <h2 class=" white-text center-align-on-small">{{quote.quote}}</h1>
+            <h2 class=" white-text center-align-on-small">{{quote.quote}}</h2>
             {% endfor %}
         </div>
 
@@ -115,7 +119,7 @@
       
       <section id="experience" class ="section scrollspy" data-aos="fade-up"
      data-aos-duration="1000">
-        <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;"> Experience</p>
+          <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;"> Experience</h3>
           <br>
 <div class="container">
   <div class="row">
@@ -125,7 +129,7 @@
 
          <div style ="border-radius: 10px;" class="card large transparent z-depth-5 ">
           <div class="card-image">
-            <a href="#work{{work.pk}} class="modal-trigger"> <img style ="border-radius: 10px;" src="{{work.cover.url}}"> </a>
+            <a href="#work{{work.pk}}" class="modal-trigger" ><img style ="border-radius: 10px;" src="{{work.cover.url}}"> </a>
             
         </div>
        
@@ -144,8 +148,8 @@
           </div>
           <div id="work{{ work.pk }}" class="modal grey darken-3">
             <div class="modal-content">
-              <h3 class="left-align teal-text text-accent-4" >{{work.position}}</h4>
-              <h4 class="left-align teal-text text-accent-4">{{work.company}}</h3>
+              <h4 class="left-align teal-text text-accent-4" >{{work.position}}</h4>
+              <h4 class="left-align teal-text text-accent-4">{{work.company}}</h4>
   {% if work.end_date %}
             <p class="left-align white-text">{{work.start_date}} - {{work.end_date}}</p>
         {% else %}
@@ -184,7 +188,7 @@
       <br>
 
       <section id="projects" class ="section scrollspy">
-        <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;">Projects</p>
+          <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;">Projects</h3>
         <br>  
         <div class="container">
           <div class="row">
@@ -212,7 +216,7 @@
                   <a class="teal-text text-accent-4 modal-trigger" href="#project{{project.pk}}">Read More..</a>
                   <div id="project{{project.pk}}" class="modal grey darken-3">
                     <div class="modal-content">
-                      <h3 class="left-align teal-text text-accent-4" >{{project.name}}</h4>
+                      <h3 class="left-align teal-text text-accent-4" >{{project.name}}</h3>
                         <p class="left-align white-text">{{project.date}}</p>
         
                         <h5 class="left-align teal-text text-accent-4">Overview</h5>
@@ -248,7 +252,7 @@
       <br><br>
       <section id="about" class ="section scrollspy" data-aos="fade-up"
      data-aos-duration="1000">
-        <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;">About Me</p>
+          <h3 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;">About Me</h3>
           <br>  
           <div class="container">
             <div class="row">
@@ -274,7 +278,7 @@
       <section id="contact" class="section scrollspy" data-aos="fade-up"
      data-aos-duration="1000">
 
-        <h4 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;" >Contact Me!</h3>
+        <h4 class="teal-text text-accent-4 center-align" style="font-size: 1.4rem;" >Contact Me!</h4>
         <br>
         <br>
           <div class="container center-align">
@@ -286,7 +290,7 @@
                 <a href="{{profile.linkedin}}" target="_blank"><img src="{% static 'linkedin.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404">
                 </a>
                 <br>
-                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.linkedin}}" target="_blank">Linkedin</a></h1>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.linkedin}}" target="_blank">Linkedin</a></h6>
               </div>
                {% endif%}
              
@@ -294,7 +298,7 @@
                    <div id="github" class="col l4 m6 s12 center-align">
                 <a href="{{profile.github}}" target ="_blank"> <img src="{% static 'github-mark.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404">
                   <br> </a>
-                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.github}}" target="_blank">Github</a></h1>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.github}}" target="_blank">Github</a></h6>
               </div>
                {% endif%}
 
@@ -303,7 +307,7 @@
                    <div id="insta" class="col l4 m6 s12 center-align">
                 <a href="{{profile.instagram}}" target="_blank"> <img src="{% static 'insta.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404"> </a> 
                 <br>
-                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.instagram}}" target="_blank">Instagram</a></h1>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.instagram}}" target="_blank">Instagram</a></h6>
               </div>
                {% endif%}
 
@@ -311,7 +315,7 @@
               <div id="email" class="col l4 m6 s12 center-align">
                 <a href="mailto:{{profile.user.email}}"> <img src="{% static 'email.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404"> </a> 
                 <br>
-                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.user.email}}" target="_blank">Email Me!</a></h1>
+                <h6><a class = "teal-text text-accent-4 center align" href="{{profile.user.email}}" target="_blank">Email Me!</a></h6>
               </div>
   
              
@@ -319,7 +323,7 @@
                   <div id="resume" class="col l4 m6 s12 center-align">
                 <a href="{% static 'resume.pdf'%}" target="_blank"> <img src="{% static 'resume.png'%}" style="height: 100px; width: 100px;" class="circle responsive-img" alt="404"> </a> 
                 <br>
-                <h6><a class = "teal-text text-accent-4 center align" href="resume.pdf" target="_blank">Resume</a></h1>
+                <h6><a class = "teal-text text-accent-4 center align" href="resume.pdf" target="_blank">Resume</a></h6>
               </div>
             </div>
           </div>
