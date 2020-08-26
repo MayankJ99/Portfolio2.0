@@ -46,8 +46,7 @@
             </div>
 
             <div class="container">
-                <a href="#" class="brand-logo left teal-text text-accent-4 hide-on-small-only">{{ profile.user.first_name }}</a>
-                <img href="#" class="brand-logo left"><img src="{% static 'mayankjha813_poker.svg' %}" style="height: 30px; width: 30px;"></a>
+                <a href="#" class="brand-logo left teal-text text-accent-4 hide-on-small-only"><img src="{% static 'mayankjha813_poker.svg' %}" style="height: 70px; width: 70px;">{{ profile.user.first_name }}</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a style="font-size: 1.3rem;" href="#experience" class="teal-text text-accent-4">Experience</a>
                     </li>
@@ -203,7 +202,7 @@
 
                     <div style="border-radius: 10px;" class="card large transparent z-depth-5 ">
                         <div class="card-image">
-                            <a href="#modal3" class="modal-trigger"> <img style="border-radius: 10px;"
+                            <a href="#project{{ project.pk }}" class="modal-trigger"> <img style="border-radius: 10px;"
                                                                           class="responsive-img "
                                                                           src="{{ project.cover.url }}" alt="404"
                                                                           loading="lazy"> </a>
