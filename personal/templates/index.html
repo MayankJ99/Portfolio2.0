@@ -46,7 +46,8 @@
             </div>
 
             <div class="container">
-                <a href = "#" class="brand-logo left teal-text text-accent-4 hide-on-small-only">{{ profile.user.first_name }}</a>
+                <a href="#" class="brand-logo left teal-text text-accent-4 hide-on-small-only">{{ profile.user.first_name }}</a>
+                <img href="#" class="brand-logo left"><img src="{% static 'mayankjha813_poker.svg' %}" style="height: 30px; width: 30px;"></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a style="font-size: 1.3rem;" href="#experience" class="teal-text text-accent-4">Experience</a>
                     </li>
@@ -202,7 +203,7 @@
 
                     <div style="border-radius: 10px;" class="card large transparent z-depth-5 ">
                         <div class="card-image">
-                            <a href="#project{{ project.pk }}" class="modal-trigger"> <img style="border-radius: 10px;"
+                            <a href="#modal3" class="modal-trigger"> <img style="border-radius: 10px;"
                                                                           class="responsive-img "
                                                                           src="{{ project.cover.url }}" alt="404"
                                                                           loading="lazy"> </a>
@@ -263,7 +264,7 @@
             <div class="row">
                 <div class="col l4 m12 s12">
 
-                    <img src="{{ profile.profile_pic.url }}" height="150" width="150" class="circle materialboxed" alt="404"
+                    <img src="{{ profile.profile_pic.url }}" height="150" width="150" class="circle" alt="404"
                          loading="lazy">
                     <p class="teal-text text-accent-4 center-align"> {{ profile.user.first_name }} {{ profile.user.last_name }}</p>
                     <p class="white-text center-align">{{ profile.location }}</p>
@@ -368,5 +369,31 @@
     </div>
 </section>
 </body>
-<script type="text/javascript" src="{% static 'index.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {edge: 'right'});
+    });
+
+    $(document).ready(function () {
+        $('.modal').modal();
+    });
+
+    $(document).ready(function () {
+        $('.scrollspy').scrollSpy();
+    });
+    $(document).ready(function () {
+        $('.materialboxed').materialbox();
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            hoverEnabled: false
+        });
+    });
+</script>
+<script>
+    AOS.init();
+</script>
 </html>
