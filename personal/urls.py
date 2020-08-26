@@ -19,9 +19,4 @@ urlpatterns = [
         path('edit', views.EditProfile, name='edit'),
         path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
-    
-
-
-
-
 ]

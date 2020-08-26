@@ -3,121 +3,135 @@
 
 <!DOCTYPE html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Mayank J.</title>
-        <link rel="stylesheet" href="{% static '/index.css' %} ">
-        <link rel = "icon" href =  
-"logo.png" 
-        type = "image/x-icon"> 
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <title>Mayank J.</title>
+    <link rel="stylesheet" href="{% static '/index.css' %} ">
+    <link rel="icon" href=
+            "logo.png"
+          type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <script src="https://use.fontawesome.com/3d41ee30d1.js"></script>
+    <script src="https://use.fontawesome.com/3d41ee30d1.js"></script>
     <!-- Compiled and minified CSS -->
-    <link type ="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
 
     <!-- Compiled and minified JavaScript -->
-      <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-    
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
 
-      <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no"/>
 
-    </head>
-    <body>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no"/>
 
-      <div style="margin-bottom: 100px;" class="navbar transparent">
-        <nav style="line-height: 90px;" class="transparent z-depth-0">
-          <div class="nav-wrapper ">
+</head>
+<body>
+
+<div style="margin-bottom: 100px;" class="navbar transparent">
+    <nav style="line-height: 90px;" class="transparent z-depth-0">
+        <div class="nav-wrapper ">
             <div class="container">
-              <div class="container">
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                <div class="container">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
+                            class="material-icons">menu</i></a>
 
-              </div>
+                </div>
 
             </div>
 
             <div class="container">
-              <a href="{% url 'personal-index' %}#quotes" class="brand-logo left teal-text text-accent-4 hide-on-small-only">Mayank</a>
-              <ul class="right hide-on-med-and-down">
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#experience" class="teal-text text-accent-4">Experience</a></li>
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#projects" class="teal-text text-accent-4">Projects</a></li>
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about" class="teal-text text-accent-4">About</a></li>
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="teal-text text-accent-4">Contact</a></li>
-{% if user.is_authenticated %}
-         <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
- {% else %}
-          <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a></li>
+                <a href="{% url 'personal-index' %}#quotes"
+                   class="brand-logo left teal-text text-accent-4 hide-on-small-only">Mayank</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#experience"
+                           class="teal-text text-accent-4">Experience</a></li>
+                    <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#projects"
+                           class="teal-text text-accent-4">Projects</a></li>
+                    <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about"
+                           class="teal-text text-accent-4">About</a></li>
+                    <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact"
+                           class="teal-text text-accent-4">Contact</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}"
+                               class="teal-text text-accent-4">Logout</a></li>
+                    {% else %}
+                        <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}"
+                               class="teal-text text-accent-4">Login</a></li>
 
-        {% endif %}
-              </ul>
+                    {% endif %}
+                </ul>
             </div>
-           
-          </div>
-        </nav>
-        <div class="container sidenav right" id="mobile-demo">
-          <ul>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#experience" class="teal-text text-accent-4">Experience</a></li>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#projects" class="teal-text text-accent-4">Projects</a></li>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about" class="teal-text text-accent-4">About</a></li>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="teal-text text-accent-4">Contact</a></li>
-{% if user.is_authenticated %}
-         <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a></li>
- {% else %}
-          <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a></li>
 
-        {% endif %}
-          </ul>
         </div>
-      </div>
+    </nav>
+    <div class="container sidenav right" id="mobile-demo">
+        <ul>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#experience"
+                   class="teal-text text-accent-4">Experience</a></li>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#projects"
+                   class="teal-text text-accent-4">Projects</a></li>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about" class="teal-text text-accent-4">About</a>
+            </li>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="teal-text text-accent-4">Contact</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a>
+                </li>
+            {% else %}
+                <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a>
+                </li>
 
-      {% if user.is_authenticated%}
-       <div class="fixed-action-btn">
-  <a class="btn-floating btn-large red">
-    <i class="large material-icons">mode_edit</i>
-  </a>
-  <ul>
-    <li><a href = "{% url 'work' %}" class="btn-floating blue"><i class="material-icons">work</i> </a></li>
-    <li><a href = "{% url 'create'%}" class="btn-floating green"><i class="material-icons">web_asset</i></a></li>
-    <li><a  href = "{% url 'quote'%}"class="btn-floating red"><i class="material-icons">format_quote</i></a></li>
-
-  </ul>
+            {% endif %}
+        </ul>
+    </div>
 </div>
-{% endif%}
 
+{% if user.is_authenticated %}
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a href="{% url 'work' %}" class="btn-floating blue"><i class="material-icons">work</i> </a></li>
+            <li><a href="{% url 'create' %}" class="btn-floating green"><i class="material-icons">web_asset</i></a></li>
+            <li><a href="{% url 'quote' %}" class="btn-floating red"><i class="material-icons">format_quote</i></a></li>
 
-    <div class = "container">
-     <div class = "row">
-      <div class = "col l12 m12 s12">
-      <h1 class = "white-text">Update Project </h1>
-    <h3 class = "white-text">{{object.name}}</h3>
-
-      <form method="POST" enctype="multipart/form-data" >
-      {% csrf_token %}
-    {{ form | materializecss }}
-    <input class="btn btn-warning" type="submit" value="Update">
-</form>
+        </ul>
     </div>
-    </div>
-    </div>
+{% endif %}
 
-    </body>
-          
-      <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
-      hoverEnabled: false
+<div class="container">
+    <div class="row">
+        <div class="col l12 m12 s12">
+            <h1 class="white-text">Update Project </h1>
+            <h3 class="white-text">{{ object.name }}</h3>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | materializecss }}
+                <input class="btn btn-warning" type="submit" value="Update">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            hoverEnabled: false
+        });
     });
-  });
-      
 
-  AOS.init();
+
+    AOS.init();
 </script>
 </html>

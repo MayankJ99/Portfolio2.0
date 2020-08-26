@@ -16,6 +16,7 @@ from django import template
 CurrentUser = get_user_model()
 
 class User(auth_models.User, auth_models.PermissionsMixin):
+    
 
     def __str__(self):
         return "@{}".format(self.username)
@@ -40,7 +41,7 @@ class UserProfile(models.Model):
         # return self.bio
         return self.user.username
 
-class Project(models.Model):
+class Project(models.Model): 
     user = models.ForeignKey(CurrentUser,related_name='project' , on_delete=models.CASCADE, null=True)
     date = models.DateField()
     name = models.CharField(default = "", blank=True, max_length = 255)
