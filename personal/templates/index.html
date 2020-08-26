@@ -5,8 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Hi! I am Mayank Jha. This is my personal website.">
-  <meta name="keywords" content="HTML, CSS, JavaScript, Django, Mayank, Jha, Mayank Jha, MJ, Mayank J, Personal, Website, Portfolio, Software, Engineer, Developer, Computer, Science, Engineering, Amazon, University at Buffalo, UB, CSE, SWE, SDE">
-  <meta name="author" content="Mayank Jha">
+    <meta name="keywords"
+          content="HTML, CSS, JavaScript, Django, Mayank, Jha, Mayank Jha, MJ, Mayank J, Personal, Website, Portfolio, Software, Engineer, Developer, Computer, Science, Engineering, Amazon, University at Buffalo, UB, CSE, SWE, SDE">
+    <meta name="author" content="Mayank Jha">
+    <meta name="google-site-verification" content="ChBJDT74QfQB3NzKlNamOU9o0FaTzl7YAhxqn6Ildb0"/>
     <title>Mayank Jha</title>
     <link rel="stylesheet" href="{% static '/index.css' %} ">
     <link rel="icon" href=" {% static 'mayankjha813_poker.svg' %}"
@@ -44,8 +46,8 @@
             </div>
 
             <div class="container">
-                <a href="#quotes"
-                   class="brand-logo left teal-text text-accent-4 hide-on-small-only">{{ profile.user.first_name }}</a>
+                <a href = "#" class="brand-logo left teal-text text-accent-4 hide-on-small-only">{{ profile.user.first_name }}</a>
+                <a href = "#" class="brand-logo left teal-text text-accent-4 hide-on-small-only"><img src="{% static 'mayankjha813_poker.svg' %}" alt="404"> </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a style="font-size: 1.3rem;" href="#experience" class="teal-text text-accent-4">Experience</a>
                     </li>
@@ -201,9 +203,10 @@
 
                     <div style="border-radius: 10px;" class="card large transparent z-depth-5 ">
                         <div class="card-image">
-                            <a href="#modal3" class="modal-trigger"> <img style="border-radius: 10px;"
+                            <a href="#project{{ project.pk }}" class="modal-trigger"> <img style="border-radius: 10px;"
                                                                           class="responsive-img "
-                                                                          src="{{ project.cover.url }}" alt="404" loading="lazy"> </a>
+                                                                          src="{{ project.cover.url }}" alt="404"
+                                                                          loading="lazy"> </a>
 
                         </div>
 
@@ -261,7 +264,8 @@
             <div class="row">
                 <div class="col l4 m12 s12">
 
-                    <img src="{{ profile.profile_pic.url }}" height="150" width="150" class="circle" alt="404" loading="lazy">
+                    <img src="{{ profile.profile_pic.url }}" height="150" width="150" class="circle materialboxed" alt="404"
+                         loading="lazy">
                     <p class="teal-text text-accent-4 center-align"> {{ profile.user.first_name }} {{ profile.user.last_name }}</p>
                     <p class="white-text center-align">{{ profile.location }}</p>
                     <p class="white-text center-align">{{ profile.occupation }}</p>
@@ -291,21 +295,25 @@
 
                     <a href="{{ profile.linkedin }}" target="_blank"><img src="{% static 'linkedin.png' %}"
                                                                           style="height: 100px; width: 100px;"
-                                                                          class="circle responsive-img" alt="404" loading="lazy">
+                                                                          class="circle responsive-img" alt="404"
+                                                                          loading="lazy">
                     </a>
                     <br>
-                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.linkedin }}" target="_blank" rel="noopener">Linkedin</a>
+                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.linkedin }}" target="_blank"
+                           rel="noopener">Linkedin</a>
                     </h6>
                 </div>
             {% endif %}
 
             {% if profile.github %}
-                <div id = "github" class="col l4 m6 s12 center-align">
+                <div id="github" class="col l4 m6 s12 center-align">
                     <a href="{{ profile.github }}" target="_blank"> <img src="{% static 'github-mark.png' %}"
                                                                          style="height: 100px; width: 100px;"
-                                                                         class="circle responsive-img" alt="404" loading="lazy">
+                                                                         class="circle responsive-img" alt="404"
+                                                                         loading="lazy">
                         <br> </a>
-                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.github }}" target="_blank" rel="noopener">Github</a>
+                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.github }}" target="_blank"
+                           rel="noopener">Github</a>
                     </h6>
                 </div>
             {% endif %}
@@ -315,10 +323,12 @@
                 <div id="insta" class="col l4 m6 s12 center-align">
                     <a href="{{ profile.instagram }}" target="_blank"> <img src="{% static 'insta.png' %}"
                                                                             style="height: 100px; width: 100px;"
-                                                                            class="circle responsive-img" alt="404" loading="lazy">
+                                                                            class="circle responsive-img" alt="404"
+                                                                            loading="lazy">
                     </a>
                     <br>
-                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.instagram }}" target="_blank" rel="noopener">Instagram</a>
+                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.instagram }}" target="_blank"
+                           rel="noopener">Instagram</a>
                     </h6>
                 </div>
             {% endif %}
@@ -327,19 +337,23 @@
             <div id="email" class="col l4 m6 s12 center-align">
                 <a href="mailto:{{ profile.user.email }}"> <img src="{% static 'email.png' %}"
                                                                 style="height: 100px; width: 100px;"
-                                                                class="circle responsive-img" alt="404" loading="lazy"> </a>
+                                                                class="circle responsive-img" alt="404" loading="lazy">
+                </a>
                 <br>
-                <h6><a class="teal-text text-accent-4 center align" href="{{ profile.user.email }}" target="_blank" rel="noopener">Email
+                <h6><a class="teal-text text-accent-4 center align" href="{{ profile.user.email }}" target="_blank"
+                       rel="noopener">Email
                     Me!</a></h6>
             </div>
 
 
             <div id="resume" class="col l4 m6 s12 center-align">
                 <a href="{% static 'Mayank_Jha (1).pdf' %}" target="_blank"> <img src="{% static 'resume.png' %}"
-                                                                          style="height: 100px; width: 100px;"
-                                                                          class="circle responsive-img" alt="404" loading="lazy"> </a>
+                                                                                  style="height: 100px; width: 100px;"
+                                                                                  class="circle responsive-img"
+                                                                                  alt="404" loading="lazy"> </a>
                 <br>
-                <h6><a class="teal-text text-accent-4 center align" href="resume.pdf" target="_blank" rel="noopener">Resume</a></h6>
+                <h6><a class="teal-text text-accent-4 center align" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+                </h6>
             </div>
         </div>
     </div>
@@ -355,31 +369,5 @@
     </div>
 </section>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, {edge: 'right'});
-    });
-
-    $(document).ready(function () {
-        $('.modal').modal();
-    });
-
-    $(document).ready(function () {
-        $('.scrollspy').scrollSpy();
-    });
-    $(document).ready(function () {
-        $('.materialboxed').materialbox();
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.fixed-action-btn');
-        var instances = M.FloatingActionButton.init(elems, {
-            hoverEnabled: false
-        });
-    });
-</script>
-<script>
-    AOS.init();
-</script>
+<script type="text/javascript" src="{% static 'index.js' %}"></script>
 </html>
