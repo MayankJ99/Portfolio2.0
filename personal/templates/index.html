@@ -128,20 +128,26 @@
            <br>
                       <br>
 
-
            <div class="container">
                 <img src="{% static 'mayankjha813_poker.png' %}" alt="404" height="350" width="350"
                  class="circle responsive-img" >
            </div>
 
         </div>
-        <div class="col xl6 l6 m6 s12">
+    <div class="col xl1"></div>
+        <div class="col xl5 l6 m6 s12" >
             <h1 class="teal-text text-accent-4 hide-on-small-only "> Hi, </h1>
             <h2 class="white-text hide-on-small-only ">I'm {{ profile.user.first_name }}.</h2>
             <h3 class="white-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h3>
-            {% for quote in quotes %}
-                <h3 class=" white-text center-align-on-small">{{ quote.quote | linebreaksbr}}</h3>
+            <div>
+                 {% for quote in quotes %}
+                     <blockquote style="border-color: #00ad9c">
+                                     <h4 class=" white-text center-align-on-small">{{ quote.quote | linebreaksbr}}</h4>
+
+                     </blockquote>
             {% endfor %}
+            </div>
+
         </div>
 
 
