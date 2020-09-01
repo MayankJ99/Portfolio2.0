@@ -123,23 +123,28 @@
 <section id="quotes" class="section scrollspy" style="margin-bottom: 100px;">
 
     <div class="container row">
-        {% if user.is_authenticated %}
-            <h1 class="white-text typewriter "> Logged in </h1>
-            </br>
-        {% endif %}
-        <div class="col l6 m6 s12">
-            <h1 class="white-text hide-on-small-only "> Hi, I'm {{ profile.user.first_name }}. </h1>
-            <h2 class="white-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h2>
+       <div class="col xl6 l6 m6 s12">
+           <br>
+           <br>
+                      <br>
+
+
+           <div class="container">
+                <img src="{% static 'mayankjha813_poker.png' %}" alt="404" height="350" width="350"
+                 class="circle responsive-img" >
+           </div>
+
+        </div>
+        <div class="col xl6 l6 m6 s12">
+            <h1 class="teal-text text-accent-4 hide-on-small-only "> Hi, </h1>
+            <h2 class="white-text hide-on-small-only ">I'm {{ profile.user.first_name }}.</h2>
+            <h3 class="white-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h3>
             {% for quote in quotes %}
-                <h2 class=" white-text center-align-on-small">{{ quote.quote }}</h2>
+                <h3 class=" white-text center-align-on-small">{{ quote.quote | linebreaksbr}}</h3>
             {% endfor %}
         </div>
 
-        <div class="col l6 m6 s12">
-            <img src="{% static 'mayankjha813_poker.png' %}" alt="404" height="500" width="500"
-                 class="circle responsive-img">
 
-        </div>
     </div>
 
 </section>
