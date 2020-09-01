@@ -20,7 +20,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/3d41ee30d1.js"></script>
     <!-- Compiled and minified CSS -->
@@ -75,8 +75,16 @@
 
         </div>
     </nav>
-    <div class="container sidenav right" id="mobile-demo">
-        <ul>
+        <ul class="sidenav right" id="mobile-demo" style="background: #1d1d1d">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                    </div>
+                    <img class="circle" src="{{ profile.profile_pic.url }}">
+                    <span style="font-size: 1.7em;" class="white-text">Mayank Jha</span>
+                </div>
+            </li>
+            <li><div class="divider grey darken-2 "></div></li>
             <li><a style="font-size: 1.3em;" href="#experience" class="teal-text text-accent-4">Experience</a></li>
             <li><a style="font-size: 1.3em;" href="#projects" class="teal-text text-accent-4">Projects</a></li>
             <li><a style="font-size: 1.3em;" href="#about" class="teal-text text-accent-4">About</a></li>
@@ -91,7 +99,6 @@
 
             {% endif %}
         </ul>
-    </div>
 </div>
 
 {% if user.is_authenticated %}
@@ -127,12 +134,16 @@
         </div>
 
       <div class="col l6 m6 s12">
-             <img src="{% static 'mayankjha813_transparent_poker.png' %}" alt="404" height="500" width="500" class="hide-on-small-only">
+             <img src="{% static 'mayankjha813_poker.png' %}" alt="404" height="500" width="500" class="circle responsive-img">
+
         </div>
     </div>
 
 </section>
 
+<div class="container">
+    <div class="divider grey darken-2 show-on-small"></div>
+</div>
 <section id="experience" class="section scrollspy">
     <h4 class="teal-text text-accent-4 center-align"> Experience</h4>
     <br>
@@ -221,11 +232,7 @@
                         <div class="card-content">
                             <h5 class="left-align teal-text text-accent-4">{{ project.name }}</h5>
                             <br>
-                            <br>
-                            <br>
                             <p class="left-align white-text">{{ project.short_description }}</p>
-                            <br>
-                            <br>
                             <br>
                         </div>
                         <div class="card-action">
