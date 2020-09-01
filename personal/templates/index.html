@@ -1,4 +1,5 @@
 {% load static %}
+{% load webp_converter %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +12,9 @@
     <meta name="theme-color" content="#1d1d1d"/>
     <meta name="google-site-verification" content="ChBJDT74QfQB3NzKlNamOU9o0FaTzl7YAhxqn6Ildb0"/>
     <title>Mayank Jha</title>
-    <link rel="apple-touch-icon" href="{% static 'mayankjha813_transparent_poker.png' %}">
+    <link rel="apple-touch-icon" href="{% static_webp 'mayankjha813_transparent_poker.png' %}">
     <link rel="stylesheet" href="{% static '/index.css' %} ">
-    <link rel="icon" href=" {% static 'mayankjha813_transparent_poker.png' %}"
+    <link rel="icon" href=" {% static_webp 'mayankjha813_transparent_poker.png' %}"
           type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -47,7 +48,7 @@
             </div>
 
             <div class="container">
-                <a href="#quotes" class="brand-logo left"><img src="{% static 'mayankjha813_transparent_poker.png' %}"
+                <a href="#quotes" class="brand-logo left"><img src="{% static_webp 'mayankjha813_transparent_poker.png' %}"
                                                                style="height: 100px; width: 100px; " alt="404"></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a style="font-size: 1.3em;" href="#experience" class="teal-text text-accent-4">Experience</a>
@@ -129,7 +130,7 @@
                       <br>
 
            <div class="container">
-                <img src="{% static 'mayankjha813_poker.png' %}" alt="404" height="350" width="350"
+                <img src="{% static_webp 'mayankjha813_poker.png' %}" alt="404" height="350" width="350"
                  class="circle responsive-img" >
            </div>
 
@@ -347,7 +348,7 @@
                 <div id="linkedin" class="col l4 m6 s12 center-align">
 
                     <a href="{{ profile.linkedin }}" target="_blank" rel="noopener"><img
-                            src="{% static 'linkedin.png' %}"
+                            src="{% static_webp 'linkedin.png' %}"
                             style="height: 75px; width: 75px;"
                             class="circle responsive-img" alt="404"
                             loading="lazy">
@@ -362,7 +363,7 @@
             {% if profile.github %}
                 <div id="github" class="col l4 m6 s12 center-align">
                     <a href="{{ profile.github }}" target="_blank" rel="noopener"> <img
-                            src="{% static 'github-mark.png' %}"
+                            src="{% static_webp 'github-mark.png' %}"
                             style="height: 75px; width: 75px;"
                             class="circle responsive-img" alt="404"
                             loading="lazy">
@@ -377,7 +378,7 @@
             {% if profile.instagram %}
                 <div id="insta" class="col l4 m6 s12 center-align">
                     <a href="{{ profile.instagram }}" target="_blank" rel="noopener"> <img
-                            src="{% static 'insta.png' %}"
+                            src="{% static_webp 'insta.png' %}"
                             style="height: 75px; width: 75px;"
                             class="circle responsive-img" alt="404"
                             loading="lazy">
@@ -391,7 +392,7 @@
 
 
             <div id="email" class="col l4 m6 s12 center-align">
-                <a href="mailto:{{ profile.user.email }}"> <img src="{% static 'email.png' %}"
+                <a href="mailto:{{ profile.user.email }}"> <img src="{% static_webp 'email.png' %}"
                                                                 style="height: 75px; width: 75px;"
                                                                 class="circle responsive-img" alt="404" loading="lazy">
                 </a>
