@@ -23,7 +23,7 @@ import personal.urls
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('mayanksettings/', admin.site.urls),
     path('', include('personal.urls')),
 path('', include('django.contrib.auth.urls')),
 

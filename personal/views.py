@@ -16,6 +16,14 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
 
+def handler404(request, *args, **argv):
+    return render(request, '404.html', status=404)
+
+
+
+def handler500(request, *args, **argv):
+    return render(request, '404.html', status=404)
+
 def index(request):
     me = models.UserProfile.objects.get(user__username="mayank")
     projects = models.Project.objects.filter(user__username='mayank')

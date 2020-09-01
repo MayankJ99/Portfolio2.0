@@ -1,0 +1,57 @@
+{% load static %}
+{% load materializecss %}
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mayank J.</title>
+    <link rel="stylesheet" href="{% static '/index.css' %} ">
+    <link rel="icon" href=
+            "logo.png"
+          type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/3d41ee30d1.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no"/>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col l12 m12 s12">
+        <h1 class="white-text">404 not found.</h1>
+            <a class="btn" href="{% url 'personal-index'%}">Home</a>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            hoverEnabled: false
+        });
+    });
+
+
+    AOS.init();
+</script>
+</html>

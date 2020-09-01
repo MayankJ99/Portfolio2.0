@@ -20,3 +20,6 @@ urlpatterns = [
         path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
 ]
+
+handler404 = views.handler404
+handler500 = views.handler500
