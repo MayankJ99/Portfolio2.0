@@ -7,7 +7,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -19,7 +18,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='User',
             fields=[
-                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
+                ('user_ptr',
+                 models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True,
+                                      primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'user',
@@ -34,13 +35,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserProfile',
             fields=[
-                ('profile_pic', models.ImageField(blank=True, default='images/BlueHead.jpg', null=True, upload_to='images/')),
+                ('profile_pic',
+                 models.ImageField(blank=True, default='images/BlueHead.jpg', null=True, upload_to='images/')),
                 ('bio', models.TextField(blank=True, default='')),
                 ('bio_html', models.TextField(editable=False)),
                 ('location', models.CharField(blank=True, default='', max_length=255)),
                 ('occupation', models.CharField(blank=True, default='', max_length=255)),
                 ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE,
+                                              to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

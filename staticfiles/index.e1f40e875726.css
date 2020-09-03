@@ -1,65 +1,73 @@
 body {
-  background-color: #1d1d1d;
+    background-color: #1d1d1d;
 }
 
 .input-field [type=text] {
-  color: white;
+    color: white;
 }
 
-.help-block{
-  color: white;
+.help-block {
+    color: white;
 }
 
 .input-field [type=date] {
-  color: white;
+    color: white;
 }
 
 .input-field [type=email] {
-  color: white;
+    color: white;
 }
 
 .input-field [type=password] {
-  color: white;
+    color: white;
 }
 
 .material-icons {
-  vertical-align: -6px;
+    vertical-align: -6px;
 }
 
 textarea {
-  color:white;
-  }
-.typewriter h1{
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  
-  animation: 
-    typing 2.5s steps(35, end),
+    color: white;
+}
+
+.typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+
+    animation: typing 2.5s steps(35, end),
     blink-caret .5s step-end infinite;
 }
 
-.typewriter h2{
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  
-  animation: 
-    typing 2.5s steps(35, end),
+.typewriter h2 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+
+    animation: typing 2.5s steps(35, end),
     blink-caret .5s step-end infinite;
 }
 
 .typewriter {
-  display: inline-flex;
+    display: inline-flex;
 }
+
 /* The typing effect */
 @keyframes typing {
-  from { width: 0}
-  to { width: 100% }
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange;
+    }
 }

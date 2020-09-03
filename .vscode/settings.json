@@ -1,7 +1,6 @@
 {
-    "emmet.excludeLanguages": [
-
-        "markdown"
-    ],
-    "files.autoSave": "afterDelay"
+  "emmet.excludeLanguages": [
+    "markdown"
+  ],
+  "files.autoSave": "afterDelay"
 }

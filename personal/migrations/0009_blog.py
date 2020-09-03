@@ -7,7 +7,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('personal', '0008_auto_20200622_1916'),
@@ -21,7 +20,9 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now=True)),
                 ('content', ckeditor_uploader.fields.RichTextUploadingField()),
                 ('title', models.CharField(max_length=200)),
-                ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='blogger', to=settings.AUTH_USER_MODEL)),
+                ('user',
+                 models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='blogger',
+                                   to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

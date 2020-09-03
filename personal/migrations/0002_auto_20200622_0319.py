@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('personal', '0001_initial'),
@@ -38,7 +37,8 @@ class Migration(migrations.Migration):
                 ('company', models.CharField(blank=True, default='', max_length=255)),
                 ('full_description', models.TextField(blank=True, default='')),
                 ('cover', models.ImageField(blank=True, null=True, upload_to='images/')),
-                ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE,
+                                              to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -51,7 +51,8 @@ class Migration(migrations.Migration):
                 ('full_description', models.TextField(blank=True, default='')),
                 ('link', models.CharField(blank=True, default='', max_length=255)),
                 ('cover', models.ImageField(blank=True, null=True, upload_to='images/')),
-                ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE,
+                                              to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

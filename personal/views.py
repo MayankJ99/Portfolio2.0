@@ -16,13 +16,28 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
 
+
 def handler404(request, *args, **argv):
     return render(request, '404.html', status=404)
 
 
-
 def handler500(request, *args, **argv):
     return render(request, '404.html', status=404)
+
+
+def blogList(request):
+    me = models.UserProfile.objects.get(user__username="mayank")
+    articles = models.Blog.objects.filter(user__username="mayank")
+    context = {"profile": me, "posts": articles}
+    print(articles)
+    return render(request, 'bloglist.html', context)
+
+
+class blogDetail(DetailView):
+    model = models.Blog
+
+    template_name = 'blog_detail.html'
+
 
 def index(request):
     me = models.UserProfile.objects.get(user__username="mayank")
@@ -30,13 +45,12 @@ def index(request):
     works = models.Work.objects.filter(user__username='mayank')
     quotes = models.Intro.objects.filter(user__username='mayank')
 
-
-    c = {"profile":me, "projects":projects, "works":works, "quotes":quotes}
-    return render(request, 'index.html',c)
+    c = {"profile": me, "projects": projects, "works": works, "quotes": quotes}
+    return render(request, 'index.html', c)
 
 
 class CreateProject(LoginRequiredMixin, CreateView):
-    fields = [ 'name', 'date','short_description', 'full_description', 'link', 'cover']
+    fields = ['name', 'date', 'short_description', 'full_description', 'link', 'cover']
     template_name = 'projectForm.html'
     model = models.Project
 
@@ -47,8 +61,41 @@ class CreateProject(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+class CreateArticle(LoginRequiredMixin, CreateView):
+    fields = ['title', 'cover', 'content']
+    template_name = 'newblog.html'
+    model = models.Blog
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+
+class deleteArticle(LoginRequiredMixin, DeleteView):
+    model = models.Blog
+    success_url = reverse_lazy("bloglist")
+    template_name = 'deleteBlog.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user_id=self.request.user.id)
+
+    def delete(self, *args, **kwargs):
+        messages.success(self.request, "article Deleted")
+        return super().delete(*args, **kwargs)
+
+
+class updateArticle(LoginRequiredMixin, UpdateView):
+    model = models.Blog
+    fields = ['title', 'cover', 'content']
+    success_url = reverse_lazy('bloglist')
+    template_name = 'updateBlog.html'
+
+
 class CreateWork(LoginRequiredMixin, CreateView):
-    fields = [ 'position','company','start_date','end_date', 'full_description', 'cover']
+    fields = ['position', 'company', 'start_date', 'end_date', 'full_description', 'cover']
     template_name = 'workForm.html'
     model = models.Work
 
@@ -60,7 +107,7 @@ class CreateWork(LoginRequiredMixin, CreateView):
 
 
 class CreateQuote(LoginRequiredMixin, CreateView):
-    fields = [ 'quote']
+    fields = ['quote']
     template_name = 'quoteForm.html'
     model = models.Intro
 
@@ -69,6 +116,7 @@ class CreateQuote(LoginRequiredMixin, CreateView):
         self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
+
 
 class DeleteProject(LoginRequiredMixin, DeleteView):
     model = models.Project
@@ -83,6 +131,7 @@ class DeleteProject(LoginRequiredMixin, DeleteView):
         messages.success(self.request, "Project Deleted")
         return super().delete(*args, **kwargs)
 
+
 class DeleteWork(LoginRequiredMixin, DeleteView):
     model = models.Work
     success_url = reverse_lazy("personal-index")
@@ -96,17 +145,20 @@ class DeleteWork(LoginRequiredMixin, DeleteView):
         messages.success(self.request, "Work Experience Deleted")
         return super().delete(*args, **kwargs)
 
+
 class UpdateProject(LoginRequiredMixin, UpdateView):
     model = models.Project
-    fields = [ 'name', 'date','short_description', 'full_description', 'link', 'cover']
+    fields = ['name', 'date', 'short_description', 'full_description', 'link', 'cover']
     success_url = reverse_lazy('personal-index')
     template_name = 'updateProject.html'
 
+
 class UpdateWork(LoginRequiredMixin, UpdateView):
     model = models.Work
-    fields = [ 'position','company','start_date','end_date', 'full_description', 'cover']
+    fields = ['position', 'company', 'start_date', 'end_date', 'full_description', 'cover']
     success_url = reverse_lazy('personal-index')
     template_name = 'updateWork.html'
+
 
 def EditProfile(request):
     if request.method == "POST":
@@ -129,4 +181,4 @@ def EditProfile(request):
         user_form = forms.UserEditForm(instance=request.user)
 
         return render(request, 'EditProfile.html', {'u_form': user_form,
-                                                           'p_form': profile_form})
+                                                    'p_form': profile_form})

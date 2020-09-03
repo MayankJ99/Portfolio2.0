@@ -21,10 +21,9 @@ from django.conf import settings
 
 import personal.urls
 
-
 urlpatterns = [
-    path('mayanksettings/', admin.site.urls),
-    path('', include('personal.urls')),
-path('', include('django.contrib.auth.urls')),
+                  path('mayanksettings/', admin.site.urls),
+                  path('', include('personal.urls')),
+                  path('', include('django.contrib.auth.urls')),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
