@@ -54,12 +54,13 @@ class Project(models.Model):
     name = models.CharField(default="", blank=True, max_length=255)
     short_description = models.CharField(default="", max_length=255)
     full_description = models.TextField(default="", blank=True)
+    demo = models.CharField(default="", blank=True, null=True)
     link = models.CharField(default="", blank=True, max_length=255)
-    cover = models.ImageField(upload_to='images/', null=True)
-    # cover = ProcessedImageField(upload_to='avatars',
-    #                                        processors=[ResizeToFill(1280, 720)],
-    #                                        format='JPEG',
-    #                                        options={'quality': 70}, null=True, blank=True)
+    # cover = models.ImageField(upload_to='images/', null=True)
+    cover = ProcessedImageField(upload_to='images/',
+                                           processors=[ResizeToFill(1280, 720)],
+                                           format='JPEG',
+                                           options={'quality': 70}, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now=True)
 
@@ -84,8 +85,11 @@ class Work(models.Model):
     company = models.CharField(default="", max_length=255)
 
     full_description = models.TextField(default="", )
-    cover = models.ImageField(upload_to='images/', blank=True, null=True)
-
+    # cover = models.ImageField(upload_to='images/', blank=True, null=True)
+    cover = ProcessedImageField(upload_to='images/',
+                                           processors=[ResizeToFill(1280, 720)],
+                                           format='JPEG',
+                                           options={'quality': 70}, null=True, blank=True)
     def __str__(self):
         return self.position
 
