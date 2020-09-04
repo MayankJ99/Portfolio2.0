@@ -29,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no"/>
 
 </head>
-<body>
+<body style="background-color : #a1887f">
 
 <div style="margin-bottom: 100px;" class="navbar transparent">
     <nav style="line-height: 90px;" class="transparent z-depth-0">
@@ -45,25 +45,25 @@
 
             <div class="container">
                 <a href="{% url 'personal-index' %}#quotes"
-                   class="brand-logo left teal-text text-accent-4 hide-on-small-only">Mayank</a>
+                   class="brand-logo left black-text hide-on-small-only">Mayank</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#experience"
-                           class="teal-text text-accent-4">Experience</a></li>
+                           class="black-text">Experience</a></li>
                     <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#projects"
-                           class="teal-text text-accent-4">Projects</a></li>
+                           class="black-text">Projects</a></li>
                     <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about"
-                           class="teal-text text-accent-4">About</a></li>
+                           class="black-text">About</a></li>
                     <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}"
-                           class="teal-text text-accent-4">Blog</a></li>
+                           class="black-text">Blog</a></li>
 
                     <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact"
-                           class="teal-text text-accent-4">Contact</a></li>
+                           class="black-text">Contact</a></li>
                     {% if user.is_authenticated %}
                         <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}"
-                               class="teal-text text-accent-4">Logout</a></li>
+                               class="black-text">Logout</a></li>
                     {% else %}
                         <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}"
-                               class="teal-text text-accent-4">Login</a></li>
+                               class="black-text">Login</a></li>
 
                     {% endif %}
                 </ul>
@@ -74,18 +74,18 @@
     <div class="container sidenav right" id="mobile-demo">
         <ul>
             <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#experience"
-                   class="teal-text text-accent-4">Experience</a></li>
+                   class="black-text">Experience</a></li>
             <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#projects"
-                   class="teal-text text-accent-4">Projects</a></li>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about" class="teal-text text-accent-4">About</a>
+                   class="black-text">Projects</a></li>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about" class="black-text">About</a>
             </li>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="teal-text text-accent-4">Contact</a>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="black-text">Contact</a>
             </li>
             {% if user.is_authenticated %}
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="teal-text text-accent-4">Logout</a>
+                <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="black-text">Logout</a>
                 </li>
             {% else %}
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="teal-text text-accent-4">Login</a>
+                <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="black-text">Login</a>
                 </li>
 
             {% endif %}
@@ -115,8 +115,8 @@
 
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <h1 class="white-text">Update Article </h1>
-                <h3 class="white-text">{{ object.title }}</h3>
+                <h1 class="black-text">Update Article </h1>
+                <h3 class="black-text">{{ object.title }}</h3>
                 {{ form.title | materializecss }}
                 {{ form.cover | materializecss }}
                 <br>

@@ -13,6 +13,9 @@ from io import BytesIO
 from PIL import Image
 from django.core.files import File
 from tinymce import models as tinymce_models
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
+
 
 # Create your models here.
 CurrentUser = get_user_model()
@@ -53,6 +56,11 @@ class Project(models.Model):
     full_description = models.TextField(default="", blank=True)
     link = models.CharField(default="", blank=True, max_length=255)
     cover = models.ImageField(upload_to='images/', null=True)
+    # cover = ProcessedImageField(upload_to='avatars',
+    #                                        processors=[ResizeToFill(1280, 720)],
+    #                                        format='JPEG',
+    #                                        options={'quality': 70}, null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -119,16 +127,3 @@ class Blog(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-
-
-def compress(image):
-    im = Image.open(image)
-    if im.mode in ("RGBA", "P"):
-        im = im.convert("RGB")
-    # create a BytesIO object
-    im_io = BytesIO()
-    # save image to BytesIO object
-    im.save(im_io, 'JPEG', quality=70)
-    # create a django-friendly Files object
-    new_image = File(im_io, name=image.name)
-    return new_image

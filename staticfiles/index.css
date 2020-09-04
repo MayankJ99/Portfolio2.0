@@ -3,23 +3,23 @@ body {
 }
 
 .input-field [type=text] {
-    color: white;
+    color: black;
 }
 
 .help-block {
-    color: white;
+    color: black;
 }
 
 .input-field [type=date] {
-    color: white;
+    color: black;
 }
 
 .input-field [type=email] {
-    color: white;
+    color: black;
 }
 
 .input-field [type=password] {
-    color: white;
+    color: black;
 }
 
 .material-icons {
@@ -27,5 +27,5 @@ body {
 }
 
 textarea {
-    color: white;
+    color: black;
 }

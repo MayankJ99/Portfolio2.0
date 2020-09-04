@@ -1,31 +1,31 @@
 body {
-    background-color: #1d1d1d;
+    background-color: #a1887f;
 }
 
 .input-field [type=text] {
-    color: white;
+    color: black;
 }
 
 .help-block {
-    color: white;
+    color: black;
 }
 
 .input-field [type=date] {
-    color: white;
+    color: black;
 }
 
 .input-field [type=email] {
-    color: white;
+    color: black;
 }
 
 .input-field [type=password] {
-    color: white;
+    color: black;
 }
 
 .material-icons {
-    vertical-align: -6px;
+    vertical-align: -10px;
 }
 
 textarea {
-    color: white;
+    color: black;
 }

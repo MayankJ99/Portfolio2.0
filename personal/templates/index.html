@@ -9,7 +9,7 @@
     <meta name="keywords"
           content="HTML, CSS, JavaScript, Django, Mayank, Jha, Mayank Jha, MJ, Mayank J, Personal, Website, Portfolio, Software, Engineer, Developer, Computer, Science, Engineering, Amazon, University at Buffalo, UB, CSE, SWE, SDE">
     <meta name="author" content="Mayank Jha">
-    <meta name="theme-color" content="#1d1d1d"/>
+    {% comment %} <meta name="theme-color" content="#1d1d1d"/> {% endcomment %}
     <meta name="google-site-verification" content="ChBJDT74QfQB3NzKlNamOU9o0FaTzl7YAhxqn6Ildb0"/>
     <title>Mayank Jha</title>
     <link rel="apple-touch-icon" href="{% static_webp 'mayankjha813_transparent_poker.png' %}">
@@ -28,15 +28,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
-<body>
+<body style="background-color : #a1887f">
 
-<div style="margin-bottom: 100px;" class="navbar transparent">
+<div style="margin-bottom: 0px;" class="navbar transparent">
     <nav style="line-height: 90px;" class="transparent z-depth-0">
         <div class="nav-wrapper ">
             <div class="container">
-                <div class="container">
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
-                            class="material-icons">menu</i></a>
+                <div class="container" >
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right black-text" style="margin-top: 5px"><i class="material-icons">menu</i></a>
 
                 </div>
 
@@ -47,22 +46,22 @@
                         src="{% static_webp 'mayankjha813_transparent_poker.png' %}"
                         style="height: 100px; width: 100px; " alt="404"></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a style="font-size: 1.3em;" href="#experience" class="teal-text text-accent-4">Experience</a>
+                    <li><a style="font-size: 1.3em;" href="#experience" class="grey-text text-darken-3">Experience</a>
                     </li>
-                    <li><a style="font-size: 1.3em;" href="#projects" class="teal-text text-accent-4">Projects</a></li>
+                    <li><a style="font-size: 1.3em;" href="#projects" class="grey-text text-darken-3">Projects</a></li>
                     <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}"
-                           class="teal-text text-accent-4">Blog</a></li>
+                           class="grey-text text-darken-3">Blog</a></li>
 
-                    <li><a style="font-size: 1.3em;" href="#about" class="teal-text text-accent-4">About</a></li>
-                    <li><a style="font-size: 1.3em;" href="#contact" class="teal-text text-accent-4">Contact</a></li>
+                    <li><a style="font-size: 1.3em;" href="#about" class="grey-text text-darken-3">About</a></li>
+                    <li><a style="font-size: 1.3em;" href="#contact" class="grey-text text-darken-3">Contact</a></li>
                     {% if user.is_authenticated %}
                         <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
-                               class="teal-text text-accent-4">Logout</a></li>
-                        <li><a style="font-size: 1.3em;" href="{% url 'edit' %}" class="teal-text text-accent-4">Edit
+                               class="grey-text text-darken-3">Logout</a></li>
+                        <li><a style="font-size: 1.3em;" href="{% url 'edit' %}" class="grey-text text-darken-3">Edit
                             Profile</a></li>
                     {% else %}
                         <li><a style="font-size: 1.3em;" href="{% url 'personal-login' %}"
-                               class="teal-text text-accent-4">Login</a></li>
+                               class="grey-text text-darken-3">Login</a></li>
 
                     {% endif %}
 
@@ -74,30 +73,30 @@
 
         </div>
     </nav>
-    <ul class="sidenav right" id="mobile-demo" style="background: #1d1d1d">
+    <ul class="sidenav right" id="mobile-demo" style="background-color: #8d6e63;">
         <li>
             <div class="user-view">
                 <div class="background">
                 </div>
                 <img class="circle" src="{{ profile.profile_pic.url }}" alt="404">
-                <span style="font-size: 1.7em;" class="white-text">Mayank Jha</span>
+                <span style="font-size: 1.7em;" class="black-text">Mayank Jha</span>
             </div>
         </li>
         <li>
             <div class="divider grey darken-2 "></div>
         </li>
-        <li><a style="font-size: 1.3em;" href="#experience" class="teal-text text-accent-4">Experience</a></li>
-        <li><a style="font-size: 1.3em;" href="#projects" class="teal-text text-accent-4">Projects</a></li>
-        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="teal-text text-accent-4">Blog</a></li>
-        <li><a style="font-size: 1.3em;" href="#about" class="teal-text text-accent-4">About</a></li>
-        <li><a style="font-size: 1.3em;" href="#contact" class="teal-text text-accent-4">Contact</a></li>
+        <li><a style="font-size: 1.3em;" href="#experience" class="black-text">Experience</a></li>
+        <li><a style="font-size: 1.3em;" href="#projects" class="black-text">Projects</a></li>
+        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="black-text">Blog</a></li>
+        <li><a style="font-size: 1.3em;" href="#about" class="black-text">About</a></li>
+        <li><a style="font-size: 1.3em;" href="#contact" class="black-text">Contact</a></li>
         {% if user.is_authenticated %}
             <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
-                   class="teal-text text-accent-4">Logout</a>
+                   class="black-text">Logout</a>
             </li>
         {% else %}
             <li><a style="font-size: 1.3em;" href="{% url 'personal-login' %}"
-                   class="teal-text text-accent-4">Login</a>
+                   class="black-text">Login</a>
             </li>
 
         {% endif %}
@@ -121,7 +120,7 @@
 
 
 
-<section id="quotes" class="section scrollspy" style="margin-bottom: 100px;">
+<section id="quotes" class="section scrollspy" style="margin-bottom: 0px;">
 
     <div class="container row">
         <div class="col xl6 l6 m6 s12">
@@ -137,13 +136,13 @@
         </div>
         <div class="col xl1"></div>
         <div class="col xl5 l6 m6 s12">
-            <h1 class="teal-text text-accent-4 hide-on-small-only "> Hi, </h1>
-            <h2 class="white-text hide-on-small-only ">I'm {{ profile.user.first_name }}.</h2>
-            <h3 class="white-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h3>
+            <h1 class="grey-text text-darken-3 hide-on-small-only "> Hi, </h1>
+            <h2 class="black-text hide-on-small-only ">I'm {{ profile.user.first_name }}.</h2>
+            <h3 class="black-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h3>
             <div>
                 {% for quote in quotes %}
-                    <blockquote style="border-color: #00ad9c">
-                        <h4 class=" white-text center-align-on-small">{{ quote.quote | linebreaksbr }}</h4>
+                    <blockquote style="border-color: #b9f6ca">
+                        <h4 class=" black-text center-align-on-small">{{ quote.quote | linebreaksbr }}</h4>
 
                     </blockquote>
                 {% endfor %}
@@ -155,8 +154,6 @@
     </div>
 
 </section>
-<br>
-<br>
 <br>
 {% if user.is_authenticated %}
 {% else %}
@@ -170,55 +167,47 @@
 </div>
 <br>
 <section id="experience" class="section scrollspy">
-    <h4 class="teal-text text-accent-4 center-align"> Experience</h4>
+    <h4 class="black-text center-align"> Experience</h4>
     <br>
     <div class="container">
         <div class="row">
-
             {% for work in works %}
                 <div class="col l6 s12 m6">
 
-                    <div style="border-radius: 10px;" class="card large grey darken-4 hoverable">
+                    <div style="border-radius: 10px;" class="card medium grey lighten-1 hoverable">
                         <div class="card-image">
-                            <a href="#work{{ work.pk }}" class="modal-trigger"><img style="border-radius: 10px;"
+                            <a href="#work{{ work.pk }}" class="modal-trigger"><img
                                                                                     src="{{ work.cover.url }}"
                                                                                     alt="404" loading="lazy"></a>
                         </div>
 
                         <div class="card-content">
-                            <h5 class="left-align teal-text text-accent-4">{{ work.company }}</h5>
-                            <br>
-                            <p class="left-align white-text">{{ work.position }}</p>
-                            <br>
+                            <h5 class="left-align grey-text text-darken-3">{{ work.company }}</h5>
+                            <p class="left-align black-text">{{ work.position }}</p>
                             {% if work.end_date %}
-                                <p class="left-align white-text">{{ work.start_date }} - {{ work.end_date }}</p>
+                                <p class="left-align black-text">{{ work.start_date }} - {{ work.end_date }}</p>
                             {% else %}
-                                <p class="left-align white-text">{{ work.start_date }} - Present</p>
+                                <p class="left-align black-text">{{ work.start_date }} - Present</p>
                             {% endif %}
-                            <br>
                         </div>
 
-                        <div style="border-radius: 10px;" class="card-action">
-                            <a class="teal-text text-accent-4 modal-trigger" href="#work{{ work.pk }}">Read
-                                More..</a>
-                        </div>
 
-                        <div id="work{{ work.pk }}" class="modal grey darken-3">
+                        <div id="work{{ work.pk }}" class="modal grey">
                             <div class="modal-content">
-                                <h4 class="left-align teal-text text-accent-4">{{ work.position }}</h4>
-                                <h4 class="left-align teal-text text-accent-4">{{ work.company }}</h4>
+                                <h4 class="left-align grey-text text-darken-3">{{ work.position }}</h4>
+                                <h4 class="left-align grey-text text-darken-3">{{ work.company }}</h4>
                                 {% if work.end_date %}
-                                    <p class="left-align white-text">{{ work.start_date }} - {{ work.end_date }}</p>
+                                    <p class="left-align black-text">{{ work.start_date }} - {{ work.end_date }}</p>
                                 {% else %}
-                                    <p class="left-align white-text">{{ work.start_date }} - Present</p>
+                                    <p class="left-align black-text">{{ work.start_date }} - Present</p>
                                 {% endif %}
-                                <p class="left-align white-text">{{ work.location }}</p>
-                                <h5 class="left-align teal-text text-accent-4">Overview</h5>
-                                <p class="left-align white-text">{{ work.full_description | linebreaksbr }}</p>
+                                <p class="left-align black-text">{{ work.location }}</p>
+                                <h5 class="left-align grey-text text-darken-3">Overview</h5>
+                                <p class="left-align black-text">{{ work.full_description | linebreaksbr }}</p>
                                 </br>
                                 {% if user.is_authenticated %}
-                                    <a class="btn red" href="{% url 'deleteWork' pk=work.pk %}">Delete</a>
-                                    <a class="btn " href="{% url 'updateWork' pk=work.pk %}">Update</a>
+                                    <a class="btn red btn-small" href="{% url 'deleteWork' pk=work.pk %}" style="border-radius: 20px">Delete</a>
+                                    <a class="btn brown lighten-1 black-text btn-small" href="{% url 'updateWork' pk=work.pk %}" style="border-radius: 20px">Update</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -238,17 +227,16 @@
 </div>
 
 <section id="projects" class="section scrollspy">
-    <h4 class="teal-text text-accent-4 center-align">Projects</h4>
+    <h4 class="black-text center-align">Projects</h4>
     <br>
     <div class="container">
         <div class="row">
-
             {% for project in projects %}
-                <div class="col l6 s12 m6">
+                <div class="col xl6 l6 s12 m6">
 
-                    <div style="border-radius: 10px;" class="card large transparent z-depth-5 ">
+                    <div style="border-radius: 10px; background-color: #fffff8" class="card small grey lighten-1 hoverable ">
                         <div class="card-image">
-                            <a href="#project{{ project.pk }}" class="modal-trigger"> <img style="border-radius: 10px;"
+                            <a href="#project{{ project.pk }}" class="modal-trigger"> <img
                                                                                            class="responsive-img "
                                                                                            src="{{ project.cover.url }}"
                                                                                            alt="404"
@@ -257,45 +245,35 @@
                         </div>
 
                         <div class="card-content">
-                            <h5 class="left-align teal-text text-accent-4">{{ project.name }}</h5>
-                            <br>
-                            <p class="left-align white-text">{{ project.short_description }}</p>
-                            <br>
+                            <h5 class="left-align grey-text text-darken-3">{{ project.name }}</h5>
+                            <p class="left-align black-text">{{ project.short_description }}</p>
                         </div>
-                        <div class="card-action">
-                            <a class="teal-text text-accent-4 modal-trigger" href="#project{{ project.pk }}">Read
-                                More..</a>
-                            <div id="project{{ project.pk }}" class="modal grey darken-3">
-                                <div class="modal-content">
-                                    <h3 class="left-align teal-text text-accent-4">{{ project.name }}</h3>
-                                    <p class="left-align white-text">{{ project.date }}</p>
 
-                                    <h5 class="left-align teal-text text-accent-4">Overview</h5>
+                            <div id="project{{ project.pk }}" class="modal grey">
+                                <div class="modal-content">
+                                    <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
+                                    <p class="left-align black-text">{{ project.date }}</p>
+
+                                    <h5 class="left-align grey-text text-darken-3">Overview</h5>
                                     <div class=" left-align">
-                                        <p class="left-align white-text">{{ project.full_description | linebreaksbr }}</p>
+                                        <p class="left-align black-text">{{ project.full_description | linebreaksbr }}</p>
 
                                         {% if project.link %}
-                                            <a href="{{ project.link }}" target="_blank" rel="noopener"><i
-                                                    class=" material-icons">exit_to_app</i></a>
+                                            <a href="{{ project.link }}" target="_blank" rel="noopener"
+                                                    class=" btn brown lighten-1 black-text" style="border-radius: 20px">Demo</a>
                                         {% endif %}
                                         {% if user.is_authenticated %}
-                                            <a class="btn red" href="{% url 'deleteProject' pk=project.pk %}">Delete</a>
-                                            <a class="btn btn-danger" href="{% url 'updateProject' pk=project.pk %}">Update</a>
+                                            <a class="btn red btn-small" href="{% url 'deleteProject' pk=project.pk %}" style="border-radius: 20px">Delete</a>
+                                            <a class="btn brown lighten-1 black-text btn-small" href="{% url 'updateProject' pk=project.pk %}" style="border-radius: 20px">Update</a>
 
                                         {% endif %}
                                     </div>
                                 </div>
-
                             </div>
-                        </div>
                     </div>
                 </div>
             {% endfor %}
-
-
         </div>
-
-    </div>
     </div>
 </section>
 
@@ -310,7 +288,7 @@
 <section id="about" class="section scrollspy" data-aos="fade-up"
          data-aos-duration="1000">
 
-    <h4 class="teal-text text-accent-4 center-align">About me</h4>
+    <h4 class="black-text center-align">About me</h4>
     <p></p>
     <br>
     <div class="container">
@@ -319,14 +297,14 @@
 
                 <img src="{{ profile.profile_pic.url }}" height="200" width="200" class="circle center-align" alt="404"
                      loading="lazy" style="margin-left: auto; margin-right: auto; display: block">
-                <p class="teal-text text-accent-4 center-align"> {{ profile.user.first_name }} {{ profile.user.last_name }}</p>
-                <p class="white-text center-align">{{ profile.location }}</p>
-                <p class="white-text center-align">{{ profile.occupation }}</p>
+                <p class="black-text center-align"> {{ profile.user.first_name }} {{ profile.user.last_name }}</p>
+                <p class="black-text center-align">{{ profile.location }}</p>
+                <p class="black-text center-align">{{ profile.occupation }}</p>
 
 
             </div>
             <div class="col l8 m12 s12">
-                <p class="white-text center-align">{{ profile.bio | linebreaksbr }}</p>
+                <p class="black-text center-align">{{ profile.bio | linebreaksbr }}</p>
 
             </div>
         </div>
@@ -340,7 +318,7 @@
 <section id="contact" class="section scrollspy" data-aos="fade-up"
          data-aos-duration="1000">
 
-    <h4 class="teal-text text-accent-4 center-align">Contact Me!</h4>
+    <h4 class="black-text center-align">Contact Me!</h4>
     <br>
     <br>
     <div class="container center-align">
@@ -356,7 +334,7 @@
                             loading="lazy">
                     </a>
                     <br>
-                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.linkedin }}" target="_blank"
+                    <h6><a class="black-text center align" href="{{ profile.linkedin }}" target="_blank"
                            rel="noopener">Linkedin</a>
                     </h6>
                 </div>
@@ -369,7 +347,7 @@
                             class="circle responsive-img" alt="404"
                             loading="lazy">
                         <br> </a>
-                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.github }}" target="_blank"
+                    <h6><a class="black-text center align" href="{{ profile.github }}" target="_blank"
                            rel="noopener">Github</a>
                     </h6>
                 </div>
@@ -385,7 +363,7 @@
                             loading="lazy">
                     </a>
                     <br>
-                    <h6><a class="teal-text text-accent-4 center align" href="{{ profile.instagram }}" target="_blank"
+                    <h6><a class="black-text center align" href="{{ profile.instagram }}" target="_blank"
                            rel="noopener">Instagram</a>
                     </h6>
                 </div>
@@ -398,7 +376,7 @@
                                                                 class="circle responsive-img" alt="404" loading="lazy">
                 </a>
                 <br>
-                <h6><a class="teal-text text-accent-4 center align" href="{{ profile.user.email }}" target="_blank"
+                <h6><a class="black-text center align" href="{{ profile.user.email }}" target="_blank"
                        rel="noopener">Email
                     Me!</a></h6>
             </div>
@@ -410,7 +388,7 @@
                         style="height: 75px; width: 75px;"
                         class="circle responsive-img"
                         alt="404" loading="lazy"> </a>
-                <h6><a class="teal-text text-accent-4 center align" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+                <h6><a class="black-text center align" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
                 </h6>
             </div>
         </div>
@@ -421,7 +399,7 @@
     <div class="container">
         <div class="row">
             <div class="col l12 m12 s12">
-                <p class="white-text center-align"><em>{{ profile.quote }}</em></p>
+                <p class="black-text center-align"><em>{{ profile.quote }}</em></p>
             </div>
         </div>
     </div>

@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="container">
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
-                            class="material-icons">menu</i></a>
+                            class="material-icons white-text">menu</i></a>
 
                 </div>
 
@@ -55,23 +55,23 @@
                         style="height: 100px; width: 100px; " alt="404" class="circle"></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#experience"
-                           class="teal-text text-accent-4">Experience</a></li>
+                           class="white-text">Experience</a></li>
                     <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#projects"
-                           class="teal-text text-accent-4">Projects</a></li>
+                           class="white-text">Projects</a></li>
                     <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}"
-                           class="teal-text text-accent-4">Blog</a></li>
+                           class="white-text">Blog</a></li>
                     <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#about"
-                           class="teal-text text-accent-4">About</a></li>
+                           class="white-text">About</a></li>
                     <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#contact"
-                           class="teal-text text-accent-4">Contact</a></li>
+                           class="white-text">Contact</a></li>
                     {% if user.is_authenticated %}
                         <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
-                               class="teal-text text-accent-4">Logout</a></li>
-                        <li><a style="font-size: 1.3em;" href="{% url 'edit' %}" class="teal-text text-accent-4">Edit
+                               class="white-text">Logout</a></li>
+                        <li><a style="font-size: 1.3em;" href="{% url 'edit' %}" class="white-text">Edit
                             Profile</a></li>
                     {% else %}
                         <li><a style="font-size: 1.3em;" href="{% url 'personal-login' %}"
-                               class="teal-text text-accent-4">Login</a></li>
+                               class="white-text">Login</a></li>
 
                     {% endif %}
 
@@ -95,22 +95,22 @@
         <li>
             <div class="divider grey darken-2 "></div>
         </li>
-        <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#experience" class="teal-text text-accent-4">Experience</a>
+        <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#experience" class="white-text">Experience</a>
         </li>
-        <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#projects" class="teal-text text-accent-4">Projects</a>
+        <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#projects" class="white-text">Projects</a>
         </li>
-        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="teal-text text-accent-4">Blog</a></li>
+        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="white-text">Blog</a></li>
         <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#about"
-               class="teal-text text-accent-4">About</a></li>
-        <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#contact" class="teal-text text-accent-4">Contact</a>
+               class="white-text">About</a></li>
+        <li><a style="font-size: 1.3em;" href="{% url 'personal-index' %}#contact" class="white-text">Contact</a>
         </li>
         {% if user.is_authenticated %}
             <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
-                   class="teal-text text-accent-4">Logout</a>
+                   class="white-text">Logout</a>
             </li>
         {% else %}
             <li><a style="font-size: 1.3em;" href="{% url 'personal-login' %}"
-                   class="teal-text text-accent-4">Login</a>
+                   class="white-text">Login</a>
             </li>
 
         {% endif %}
@@ -140,7 +140,7 @@
     </div>
 {% endif %}
 
-<h1 class="white-text flow-text center-align flow-text" style="font-size: 4.5em">{{ blog.title }}</h1>
+<h1 class="black-text flow-text center-align flow-text" style="font-size: 4.5em">{{ blog.title }}</h1>
 
 <div class="container">
 
@@ -148,9 +148,11 @@
     <div class="divider grey darken-2 hide-on-small-only"></div>
 
 
-    <div class="white-text" style="margin: 0">
+    <div style="margin: 0">
         {{ blog.content | safe }}
     </div>
+            <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 45px;"></div>
+
     <div class="right-align">
         {% if user.is_authenticated %}
 
