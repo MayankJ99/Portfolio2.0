@@ -95,7 +95,7 @@ class updateArticle(LoginRequiredMixin, UpdateView):
 
 
 class CreateWork(LoginRequiredMixin, CreateView):
-    fields = ['position', 'company', 'start_date', 'end_date', 'full_description', 'cover']
+    fields = ['position', 'company', 'location', 'start_date', 'end_date', 'full_description', 'cover']
     template_name = 'workForm.html'
     model = models.Work
 
@@ -155,7 +155,7 @@ class UpdateProject(LoginRequiredMixin, UpdateView):
 
 class UpdateWork(LoginRequiredMixin, UpdateView):
     model = models.Work
-    fields = ['position', 'company', 'start_date', 'end_date', 'full_description', 'cover']
+    fields = ['position', 'company', 'location', 'start_date', 'end_date', 'full_description', 'cover']
     success_url = reverse_lazy('personal-index')
     template_name = 'updateWork.html'
 

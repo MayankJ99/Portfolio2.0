@@ -29,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no"/>
 
 </head>
-<body style="background-color : #a1887f">
+<body style="background-color : #C9A690">
 
 <div style="margin-bottom: 100px;" class="navbar transparent">
     <nav style="line-height: 90px;" class="transparent z-depth-0">
@@ -71,21 +71,21 @@
 
         </div>
     </nav>
-    <div class="container sidenav right" id="mobile-demo">
+    <div class="container sidenav right" id="mobile-demo" style="background-color: #3E4E59">
         <ul>
             <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#experience"
-                   class="black-text">Experience</a></li>
+                   class="white-text">Experience</a></li>
             <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#projects"
-                   class="black-text">Projects</a></li>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about" class="black-text">About</a>
+                   class="white-text">Projects</a></li>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#about" class="white-text">About</a>
             </li>
-            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="black-text">Contact</a>
+            <li><a style="font-size: 1.3rem;" href="{% url 'personal-index' %}#contact" class="white-text">Contact</a>
             </li>
             {% if user.is_authenticated %}
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="black-text">Logout</a>
+                <li><a style="font-size: 1.3rem;" href="{% url 'personal-logout' %}" class="white-text">Logout</a>
                 </li>
             {% else %}
-                <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="black-text">Login</a>
+                <li><a style="font-size: 1.3rem;" href="{% url 'personal-login' %}" class="white-text">Login</a>
                 </li>
 
             {% endif %}

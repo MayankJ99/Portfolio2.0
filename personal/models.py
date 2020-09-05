@@ -54,7 +54,7 @@ class Project(models.Model):
     name = models.CharField(default="", blank=True, max_length=255)
     short_description = models.CharField(default="", max_length=255)
     full_description = models.TextField(default="", blank=True)
-    demo = models.CharField(default="", blank=True, null=True)
+    demo = models.CharField(default="", blank=True, null=True, max_length=255)
     link = models.CharField(default="", blank=True, max_length=255)
     # cover = models.ImageField(upload_to='images/', null=True)
     cover = ProcessedImageField(upload_to='images/',

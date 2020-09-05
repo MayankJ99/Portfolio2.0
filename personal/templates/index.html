@@ -28,14 +28,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
-<body style="background-color : #a1887f">
+<body style="background-color : #C9A690">
 
 <div style="margin-bottom: 0px;" class="navbar transparent">
     <nav style="line-height: 90px;" class="transparent z-depth-0">
         <div class="nav-wrapper ">
             <div class="container">
-                <div class="container" >
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right black-text" style="margin-top: 5px"><i class="material-icons">menu</i></a>
+                <div class="container">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right black-text"
+                       style="margin-top: 5px"><i class="material-icons">menu</i></a>
 
                 </div>
 
@@ -73,7 +74,7 @@
 
         </div>
     </nav>
-    <ul class="sidenav right" id="mobile-demo" style="background-color: #8d6e63;">
+    <ul class="sidenav right" id="mobile-demo" style="background-color: #3E4E59;">
         <li>
             <div class="user-view">
                 <div class="background">
@@ -85,11 +86,11 @@
         <li>
             <div class="divider grey darken-2 "></div>
         </li>
-        <li><a style="font-size: 1.3em;" href="#experience" class="black-text">Experience</a></li>
-        <li><a style="font-size: 1.3em;" href="#projects" class="black-text">Projects</a></li>
-        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="black-text">Blog</a></li>
-        <li><a style="font-size: 1.3em;" href="#about" class="black-text">About</a></li>
-        <li><a style="font-size: 1.3em;" href="#contact" class="black-text">Contact</a></li>
+        <li><a style="font-size: 1.3em;" href="#experience" class="white-text">Experience</a></li>
+        <li><a style="font-size: 1.3em;" href="#projects" class="white-text">Projects</a></li>
+        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="white-text">Blog</a></li>
+        <li><a style="font-size: 1.3em;" href="#about" class="white-text">About</a></li>
+        <li><a style="font-size: 1.3em;" href="#contact" class="white-text">Contact</a></li>
         {% if user.is_authenticated %}
             <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
                    class="black-text">Logout</a>
@@ -129,7 +130,7 @@
             <br>
 
             <div class="container">
-                <img src="{% static_webp 'mayankjha813_poker.png' %}" alt="404" height="350" width="350"
+                <img style="background-color: #3F3F45" src="{% static_webp 'mayankjha813_transparent_poker.png' %}" alt="404" height="350" width="350"
                      class="circle responsive-img">
             </div>
 
@@ -141,7 +142,7 @@
             <h3 class="black-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h3>
             <div>
                 {% for quote in quotes %}
-                    <blockquote style="border-color: #b9f6ca">
+                    <blockquote style="border-color: #3F3F45">
                         <h4 class=" black-text center-align-on-small">{{ quote.quote | linebreaksbr }}</h4>
 
                     </blockquote>
@@ -174,40 +175,46 @@
             {% for work in works %}
                 <div class="col l6 s12 m6">
 
-                    <div style="border-radius: 10px;" class="card medium grey lighten-1 hoverable">
+                    <div style="border-radius: 10px; background-color: #86868A" class="card medium  hoverable">
                         <div class="card-image">
                             <a href="#work{{ work.pk }}" class="modal-trigger"><img
-                                                                                    src="{{ work.cover.url }}"
-                                                                                    alt="404" loading="lazy"></a>
+                                    src="{{ work.cover.url }}"
+                                    alt="404" loading="lazy"></a>
                         </div>
 
-                        <div class="card-content">
-                            <h5 class="left-align grey-text text-darken-3">{{ work.company }}</h5>
-                            <p class="left-align black-text">{{ work.position }}</p>
-                            {% if work.end_date %}
-                                <p class="left-align black-text">{{ work.start_date }} - {{ work.end_date }}</p>
-                            {% else %}
-                                <p class="left-align black-text">{{ work.start_date }} - Present</p>
-                            {% endif %}
-                        </div>
+                        <a href="#work{{ work.pk }}" class="modal-trigger">
+                            <div class="card-content">
+                                <h5 class="left-align grey-text text-darken-3">{{ work.company }}</h5>
+                                <p class="left-align white-text">{{ work.position }}</p>
+                                {% if work.end_date %}
+                                    <p class="left-align white-text">{{ work.start_date }} - {{ work.end_date }}</p>
+                                {% else %}
+                                    <p class="left-align white-text">{{ work.start_date }} - Present</p>
+                                {% endif %}
+                            </div>
+                        </a>
 
 
                         <div id="work{{ work.pk }}" class="modal grey">
                             <div class="modal-content">
-                                <h4 class="left-align grey-text text-darken-3">{{ work.position }}</h4>
-                                <h4 class="left-align grey-text text-darken-3">{{ work.company }}</h4>
+                                <h3 class="left-align grey-text text-darken-3">{{ work.position }}</h3>
+                                <h3 class="left-align grey-text text-darken-3">{{ work.company }}</h3>
+                                                            <p class="left-align black-text">{{ work.location }}</p>
+
                                 {% if work.end_date %}
                                     <p class="left-align black-text">{{ work.start_date }} - {{ work.end_date }}</p>
                                 {% else %}
                                     <p class="left-align black-text">{{ work.start_date }} - Present</p>
                                 {% endif %}
-                                <p class="left-align black-text">{{ work.location }}</p>
-                                <h5 class="left-align grey-text text-darken-3">Overview</h5>
+                                <div class="divider grey darken-2" style="width: 30%"></div>
+
                                 <p class="left-align black-text">{{ work.full_description | linebreaksbr }}</p>
                                 </br>
                                 {% if user.is_authenticated %}
-                                    <a class="btn red btn-small" href="{% url 'deleteWork' pk=work.pk %}" style="border-radius: 20px">Delete</a>
-                                    <a class="btn brown lighten-1 black-text btn-small" href="{% url 'updateWork' pk=work.pk %}" style="border-radius: 20px">Update</a>
+                                    <a class="btn red btn-small" href="{% url 'deleteWork' pk=work.pk %}"
+                                       style="border-radius: 20px">Delete</a>
+                                    <a class="btn brown lighten-1 black-text btn-small"
+                                       href="{% url 'updateWork' pk=work.pk %}" style="border-radius: 20px">Update</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -234,42 +241,48 @@
             {% for project in projects %}
                 <div class="col xl6 l6 s12 m6">
 
-                    <div style="border-radius: 10px; background-color: #fffff8" class="card small grey lighten-1 hoverable ">
+                    <div style="border-radius: 10px; background-color: #86868A"
+                         class="card small hoverable ">
                         <div class="card-image">
                             <a href="#project{{ project.pk }}" class="modal-trigger"> <img
-                                                                                           class="responsive-img "
-                                                                                           src="{{ project.cover.url }}"
-                                                                                           alt="404"
-                                                                                           loading="lazy"> </a>
+                                    class="responsive-img "
+                                    src="{{ project.cover.url }}"
+                                    alt="404"
+                                    loading="lazy"> </a>
 
                         </div>
 
-                        <div class="card-content">
-                            <h5 class="left-align grey-text text-darken-3">{{ project.name }}</h5>
-                            <p class="left-align black-text">{{ project.short_description }}</p>
-                        </div>
+                        <a href="#project{{ project.pk }}" class="modal-trigger">
+                            <div class="card-content">
+                                <h5 class="left-align grey-text text-darken-3">{{ project.name }}</h5>
+                                <p class="left-align white-text">{{ project.short_description }}</p>
+                            </div>
+                        </a>
 
-                            <div id="project{{ project.pk }}" class="modal grey">
-                                <div class="modal-content">
-                                    <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
-                                    <p class="left-align black-text">{{ project.date }}</p>
 
-                                    <h5 class="left-align grey-text text-darken-3">Overview</h5>
-                                    <div class=" left-align">
-                                        <p class="left-align black-text">{{ project.full_description | linebreaksbr }}</p>
+                        <div id="project{{ project.pk }}" class="modal grey">
+                            <div class="modal-content">
+                                <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
+                                <p class="left-align black-text">{{ project.date }}</p>
 
-                                        {% if project.link %}
-                                            <a href="{{ project.link }}" target="_blank" rel="noopener"
-                                                    class=" btn brown lighten-1 black-text" style="border-radius: 20px">Demo</a>
-                                        {% endif %}
-                                        {% if user.is_authenticated %}
-                                            <a class="btn red btn-small" href="{% url 'deleteProject' pk=project.pk %}" style="border-radius: 20px">Delete</a>
-                                            <a class="btn brown lighten-1 black-text btn-small" href="{% url 'updateProject' pk=project.pk %}" style="border-radius: 20px">Update</a>
+                                <div class="divider grey darken-2" style="width: 30%"></div>
+                                <div class=" left-align">
+                                    <p class="left-align black-text">{{ project.full_description | linebreaksbr }}</p>
 
-                                        {% endif %}
-                                    </div>
+                                    {% if project.link %}
+                                        <a href="{{ project.link }}" target="_blank" rel="noopener"
+                                           class=" btn brown lighten-1 black-text" style="border-radius: 20px">Demo</a>
+                                    {% endif %}
+                                    {% if user.is_authenticated %}
+                                        <a class="btn red btn-small" href="{% url 'deleteProject' pk=project.pk %}"
+                                           style="border-radius: 20px">Delete</a>
+                                        <a class="btn brown lighten-1 black-text btn-small"
+                                           href="{% url 'updateProject' pk=project.pk %}" style="border-radius: 20px">Update</a>
+
+                                    {% endif %}
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
@@ -368,30 +381,17 @@
                     </h6>
                 </div>
             {% endif %}
+        </div>
 
-
-            <div id="email" class="col l4 m6 s12 center-align">
-                <a href="mailto:{{ profile.user.email }}"> <img src="{% static_webp 'email.png' %}"
-                                                                style="height: 75px; width: 75px;"
-                                                                class="circle responsive-img" alt="404" loading="lazy">
-                </a>
-                <br>
-                <h6><a class="black-text center align" href="{{ profile.user.email }}" target="_blank"
-                       rel="noopener">Email
-                    Me!</a></h6>
-            </div>
-
-
-            <div id="resume" class="col l4 m6 s12 center-align">
-                <a href="{% static 'Mayank_Jha (1).pdf' %}" target="_blank" rel="noopener"> <img
-                        src="{% static 'resume.png' %}"
-                        style="height: 75px; width: 75px;"
-                        class="circle responsive-img"
-                        alt="404" loading="lazy"> </a>
-                <h6><a class="black-text center align" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-                </h6>
+        <div class="center-align">
+            <div id="email" class="center-align">
+                <a class="btn btn-small white-text brown center-align" href="mailto:{{ profile.user.email }}"
+                   style="border-radius: 20px">Email me!</a>
+                <a class="btn brown btn-small white-text center-align" href="{% static 'Mayank_Jha (1).pdf' %}"
+                   target="_blank" rel="noopener" style="border-radius: 20px">Resume</a>
             </div>
         </div>
+
     </div>
 </section>
 
