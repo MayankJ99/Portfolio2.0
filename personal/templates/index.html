@@ -80,7 +80,7 @@
                 <div class="background">
                 </div>
                 <img class="circle" src="{{ profile.profile_pic.url }}" alt="404">
-                <span style="font-size: 1.7em;" class="black-text">Mayank Jha</span>
+                <span style="font-size: 1.7em;" class="white-text">Mayank Jha</span>
             </div>
         </li>
         <li>
@@ -93,11 +93,11 @@
         <li><a style="font-size: 1.3em;" href="#contact" class="white-text">Contact</a></li>
         {% if user.is_authenticated %}
             <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
-                   class="black-text">Logout</a>
+                   class="white-text">Logout</a>
             </li>
         {% else %}
             <li><a style="font-size: 1.3em;" href="{% url 'personal-login' %}"
-                   class="black-text">Login</a>
+                   class="white-text">Login</a>
             </li>
 
         {% endif %}
