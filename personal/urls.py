@@ -24,9 +24,6 @@ urlpatterns = [
     re_path(r"deleteArticle/(?P<pk>\d+)/$", views.deleteArticle.as_view(), name="blog-delete"),
     re_path(r"updateArticle/(?P<pk>\d+)/$", views.updateArticle.as_view(), name="blog-update"),
     re_path(r'^tinymce/', include('tinymce.urls')),
-    path('admin/filebrowser/', site.urls),
-    re_path(r'^adminurl/filebrowser/', site.urls),
-    path('grappelli/', include('grappelli.urls')),
 ]
 handler404 = views.handler404
 handler500 = views.handler500

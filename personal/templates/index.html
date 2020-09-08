@@ -197,6 +197,8 @@
 
                         <div id="work{{ work.pk }}" class="modal grey">
                             <div class="modal-content">
+                            <a class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
+
                                 <h3 class="left-align grey-text text-darken-3">{{ work.position }}</h3>
                                 <h3 class="left-align grey-text text-darken-3">{{ work.company }}</h3>
                                                             <p class="left-align black-text">{{ work.location }}</p>
@@ -262,6 +264,7 @@
 
                         <div id="project{{ project.pk }}" class="modal grey">
                             <div class="modal-content">
+                            <a class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
                                 <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
                                 <p class="left-align black-text">{{ project.date }}</p>
 
@@ -271,7 +274,7 @@
 
                                     {% if project.link %}
                                         <a href="{{ project.link }}" target="_blank" rel="noopener"
-                                           class=" btn brown lighten-1 black-text" style="border-radius: 20px">Demo</a>
+                                           class=" btn btn-small brown lighten-1 black-text" style="border-radius: 20px">Demo</a>
                                     {% endif %}
                                     {% if user.is_authenticated %}
                                         <a class="btn red btn-small" href="{% url 'deleteProject' pk=project.pk %}"
