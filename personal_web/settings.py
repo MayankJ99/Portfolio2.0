@@ -146,9 +146,7 @@ DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
 TINYMCE_DEFAULT_CONFIG = {
     'relative_urls': False,
-    'plugins': "image media", 
-    'height' : "100%",
-    'line-height' : '1.00'}
+    'plugins': "image media",}
 
 TINYMCE_FILEBROWSER = True
 
