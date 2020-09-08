@@ -6,6 +6,10 @@ body {
     color: black;
 }
 
+.tinymce-content p {
+    padding: 0;
+    margin: 2px 0;
+}
 
    /* label color */
    .input-field label {
