@@ -143,12 +143,12 @@
             <a href="{% url 'new-blog' %}" class="waves-effect waves-light btn right-align"><i
                     class="material-icons left">mode_edit</i>New Article</a>
         {% endif %}
-        <h1 class="black-text flow-text center-align">Articles</h1>
+        <h3 class="black-text flow-text center-align">Articles</h1>
 
         <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 45px;"></div>
 
         {% if posts.count == 0 %}
-            <h3 class="black-text center-align">Brainstorming.. Stay tuned.</h3>
+            <h1 class="black-text center-align">Brainstorming.. Stay tuned.</h3>
         {% endif %}
         {% for post in posts %}
 
