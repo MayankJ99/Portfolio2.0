@@ -138,6 +138,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_QUERY_STRING_EXPIRE = 315464630
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
