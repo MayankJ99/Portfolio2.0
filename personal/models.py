@@ -15,6 +15,8 @@ from django.core.files import File
 from tinymce import models as tinymce_models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 
 # Create your models here.
@@ -118,7 +120,8 @@ class Intro(models.Model):
 class Blog(models.Model):
     user = models.ForeignKey(CurrentUser, related_name='blogger', on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now=True)
-    content = tinymce_models.HTMLField(blank=True, null=True)
+    # content = tinymce_models.HTMLField(blank=True, null=True)
+    content = RichTextUploadingField(blank=True, null=True)
     cover = models.ImageField(upload_to='images/', blank=True, null=True)
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
