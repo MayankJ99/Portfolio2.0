@@ -147,13 +147,13 @@
 <h2 class="black-text flow-text center-align flow-text">{{ blog.title }}</h2>
 <p class="black-text flow-text right-align" style="font-size: 0.9em">{{ blog.created_at }}</p>
 
-    <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 40px;"></div>
+    <div class="divider grey darken-2" style="margin-bottom: 40px;"></div>
 
 
     <div id="blog_content" class="flow-text">
         {{ blog.content | safe }}
     </div>
-    <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 45px;"></div>
+    <div class="divider grey darken-2" style="margin-bottom: 45px;"></div>
 
     <div class="right-align" style="margin-bottom: 40px">
         {% if user.is_authenticated %}
