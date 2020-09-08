@@ -11,6 +11,10 @@ body {
     margin: 2px 0;
 }
 
+#blog_content p{
+    line-height: 1.00 !important;
+}
+
    /* label color */
    .input-field label {
     color: #000 !important;
