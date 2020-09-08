@@ -11,9 +11,9 @@
     <meta name="author" content="Mayank Jha">
     <meta name="theme-color" content="#1d1d1d"/>
     <meta property="og:title" content="{{ blog.title }}">
-<meta property="og:image" content="{{ blog.cover.url }}">
-       <meta property="twitter:title" content="{{ blog.title }}">
-<meta property="twitter:image" content="{{ blog.cover.url }}">
+    <meta property="og:image" content="{{ blog.cover.url }}">
+    <meta property="twitter:title" content="{{ blog.title }}">
+    <meta property="twitter:image" content="{{ blog.cover.url }}">
     <meta name="google-site-verification" content="ChBJDT74QfQB3NzKlNamOU9o0FaTzl7YAhxqn6Ildb0"/>
     <title>Mayank Jha</title>
     <link rel="apple-touch-icon" href="{% static_webp 'mayankjha813_transparent_poker.png' %}">
@@ -32,7 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
-<body style = 'background-color: #C9A690'>
+<body style='background-color: #C9A690'>
 
 <div style="margin-bottom: 10px; height: 450px ; filter: blur(50%)" class="navbar transparent parallax-container">
     <div class="parallax">
@@ -140,8 +140,8 @@
     </div>
 {% endif %}
 
-<h1 class="black-text flow-text center-align flow-text" style="font-size: 4.5em">{{ blog.title }}</h1>
-<p class="black-text flow-text right-align">{{blog.created_at}}</p
+<h2 class="black-text flow-text center-align flow-text" style="font-size: 4.5em">{{ blog.title }}</h2>
+<p class="black-text flow-text right-align">{{ blog.created_at }}</p>
 
 <div class="container">
 
@@ -149,10 +149,10 @@
     <div class="divider grey darken-2 hide-on-small-only"></div>
 
 
-    <div style="margin: 0">
+    <div class="container flow-text">
         {{ blog.content | safe }}
     </div>
-            <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 45px;"></div>
+    <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 45px;"></div>
 
     <div class="right-align">
         {% if user.is_authenticated %}

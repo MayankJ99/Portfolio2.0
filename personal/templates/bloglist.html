@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
-<body style = 'background-color: #C9A690'>
+<body style='background-color: #C9A690'>
 
 <div style="margin-bottom: 100px; height: 500px" class="navbar transparent parallax-container">
     <div class="parallax">
@@ -143,23 +143,24 @@
             <a href="{% url 'new-blog' %}" class="waves-effect waves-light btn right-align"><i
                     class="material-icons left">mode_edit</i>New Article</a>
         {% endif %}
-        <h3 class="black-text flow-text center-align">Articles</h1>
+        <h1 class="black-text flow-text center-align">Articles</h1>
 
-        <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 45px;"></div>
+            <div class="divider grey darken-2 hide-on-small-only" style="margin-bottom: 45px;"></div>
 
-        {% if posts.count == 0 %}
-            <h1 class="black-text center-align">Brainstorming.. Stay tuned.</h3>
-        {% endif %}
+            {% if posts.count == 0 %}
+                <h3 class="black-text center-align">Brainstorming.. Stay tuned.</h3>
+            {% endif %}
         {% for post in posts %}
 
             <div class="col xl6 l6 m6 s12">
-                <div class="card medium grey lighten-1 hoverable" style="border-radius: 10px; background-color: #86868A">
+                <div class="card medium grey lighten-1 hoverable"
+                     style="border-radius: 10px; background-color: #86868A">
                     <div class="card-image">
                         <a href="{% url 'blog-detail' pk=post.pk %}"><img src="{{ post.cover.url }}"></a>
                     </div>
-                    <div class="card-content ">
+                    <div class="card-content">
                         <span class="card-title brown-text text-lighten-1">{{ post.title }}</span>
-                        <p>{{ post.content | truncatewords:3 | striptags | safe }}</p>
+                        <p>{{ post.content | truncatewords:3 | striptags }}</p>
                     </div>
                 </div>
             </div>
