@@ -321,6 +321,7 @@
             </div>
             <div class="col l8 m12 s12">
                 <p class="black-text center-align">{{ profile.bio | linebreaksbr }}</p>
+                <a href="{% url 'bloglist'%}"><p class="black-text center-align">Check out my blog.</p></a>
 
             </div>
         </div>
@@ -389,7 +390,7 @@
         <div class="center-align">
             <div id="email" class="center-align">
                 <a class="btn btn-small white-text brown center-align" href="mailto:{{ profile.user.email }}"
-                   style="border-radius: 20px">Email me!</a>
+                   style="border-radius: 20px">Email me</a>
                 <a class="btn brown btn-small white-text center-align" href="{% static 'Mayank_Jha (1).pdf' %}"
                    target="_blank" rel="noopener" style="border-radius: 20px">Resume</a>
             </div>

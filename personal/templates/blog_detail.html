@@ -135,8 +135,9 @@
 <img src="{{ blog.cover.url }}" class="responsive-img" style="width: 100%; height: auto;" >
 
 <h2 class="black-text flow-text center-align flow-text" style="font-size: 2.0em">{{ blog.title }}</h2>
+<a href="{% url 'bloglist' %}"><p style="font-size: 1.0em;" class="flow-text left-align black-text">Back to Articles</p></a>
+
     <p class="black-text flow-text left-align" style="font-size: 0.9em; display: inline">{{ blog.created_at }}</p>
-<a href="{% url 'bloglist' %}"><p style="font-size: 0.9em;" class="flow-text left-align black-text">Back to Articles</p></a>
 {% if user.is_authenticated %}
     <p class="left-align" style="font-size: 0.9em">Views: {% get_hit_count for blog %}</p>
 
