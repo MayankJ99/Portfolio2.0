@@ -22,7 +22,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "tinymce",
     "filebrowser",
     "imagekit",
+    "hitcount",
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+# AWS_ACCESS_KEY_ID = "AKIA6MRX5NM76QFAOKHS"
+# AWS_SECRET_ACCESS_KEY = "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"
+# AWS_STORAGE_BUCKET_NAME = "personal-website-mayank"
 AWS_QUERY_STRING_EXPIRE = 315464630
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'

@@ -35,6 +35,7 @@ def blogList(request):
 
 class blogDetail(DetailView):
     model = models.Blog
+    count_hit = True
 
     template_name = 'blog_detail.html'
 

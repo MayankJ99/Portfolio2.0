@@ -26,5 +26,7 @@ urlpatterns = [
     path('mayanksettings/', admin.site.urls),
     path('', include('personal.urls')),
 path('', include('django.contrib.auth.urls')),
+path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

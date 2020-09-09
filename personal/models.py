@@ -15,7 +15,8 @@ from django.core.files import File
 from tinymce import models as tinymce_models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
-
+from hitcount.models import HitCountMixin, HitCount
+from django.contrib.contenttypes.fields import GenericRelation
 
 # Create your models here.
 CurrentUser = get_user_model()
@@ -119,10 +120,14 @@ class Blog(models.Model):
     user = models.ForeignKey(CurrentUser, related_name='blogger', on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now=True)
     content = tinymce_models.HTMLField(blank=True, null=True)
-    cover = models.ImageField(upload_to='images/', blank=True, null=True)
+    cover = ProcessedImageField(upload_to='images/',
+                                           processors=[ResizeToFill(1280, 720)],
+                                           format='JPEG',
+                                           options={'quality': 70}, null=True, blank=True)  
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
-
+    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
+     related_query_name='hit_count_generic_relation')
     def __str__(self):
         return self.title
 

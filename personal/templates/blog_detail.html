@@ -1,5 +1,6 @@
 {% load static %}
 {% load webp_converter %}
+{% load hitcount_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,11 +35,8 @@
 </head>
 <body style='background-color: #C9A690'>
 
-<div style="margin-bottom: 10px; height: 450px ; filter: blur(50%)" class="navbar transparent parallax-container">
-    <div class="parallax">
-        <img src="{{ blog.cover.url }}">
-    </div>
-    <nav style="line-height: 90px;" class="black z-depth-0">
+<div class="navbar black ">
+    <nav class="black z-depth-0">
         <div class="nav-wrapper ">
             <div class="container">
                 <div class="container">
@@ -115,15 +113,6 @@
 
         {% endif %}
     </ul>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
-
-    </div>
-
 </div>
 
 {% if user.is_authenticated %}
@@ -141,12 +130,17 @@
 {% endif %}
 
 
-
-
 <div class="container">
-<h2 class="black-text flow-text center-align flow-text" style="font-size: 2.0em">{{ blog.title }}</h2>
-<p class="black-text flow-text right-align" style="font-size: 0.9em">{{ blog.created_at }}</p>
 
+<img src="{{ blog.cover.url }}" class="responsive-img" style="width: 100%; height: auto;" >
+
+<h2 class="black-text flow-text center-align flow-text" style="font-size: 2.0em">{{ blog.title }}</h2>
+    <p class="black-text flow-text left-align" style="font-size: 0.9em; display: inline">{{ blog.created_at }}</p>
+<a href="{% url 'bloglist' %}"><p style="font-size: 0.9em;" class="flow-text left-align black-text">Back to Articles</p></a>
+{% if user.is_authenticated %}
+    <p class="left-align" style="font-size: 0.9em">Views: {% get_hit_count for blog %}</p>
+
+{% endif %}
     <div class="divider grey darken-2" style="margin-bottom: 40px;"></div>
 
 
