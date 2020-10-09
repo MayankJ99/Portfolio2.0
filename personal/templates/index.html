@@ -186,7 +186,7 @@
 
                         <a href="#work{{ work.pk }}" class="modal-trigger">
                             <div class="card-content">
-                                <h5 class="left-align grey-text flow-text text-darken-3">{{ work.company }}</h5>
+                                <h5 class="left-align white-text flow-text text-darken-3">{{ work.company }}</h5>
                                 <p class="left-align white-text">{{ work.position }}</p>
                                 
                             </div>
@@ -195,7 +195,7 @@
 
                         <div id="work{{ work.pk }}" class="modal grey">
                             <div class="modal-content">
-                            <a href = "#" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
+                            <a href = "javascript:void(0);" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
 
                                 <h3 class="left-align grey-text text-darken-3">{{ work.position }}</h3>
                                 <h3 class="left-align grey-text text-darken-3">{{ work.company }}</h3>
@@ -254,7 +254,7 @@
 
                         <a href="#project{{ project.pk }}" class="modal-trigger">
                             <div class="card-content">
-                                <h5 class="left-align grey-text text-darken-3">{{ project.name }}</h5>
+                                <h5 class="left-align white-text text-darken-3">{{ project.name }}</h5>
                                 <p class="left-align white-text">{{ project.short_description }}</p>
                             </div>
                         </a>
@@ -262,7 +262,7 @@
 
                         <div id="project{{ project.pk }}" class="modal grey">
                             <div class="modal-content">
-                            <a href = "#" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
+                            <a href = "javascript:void(0);" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
                                 <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
                                 <p class="left-align black-text">{{ project.date }}</p>
 
@@ -323,6 +323,11 @@
             </div>
         </div>
         <a href="{% url 'bloglist'%}"><p class="black-text center-align">Check out my blog.</p></a>
+        {% comment %} <div class="center-align">
+
+                <iframe class="center-align" src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="300" height="80" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>
+
+        </div> {% endcomment %}
 
     </div>
 </section>
