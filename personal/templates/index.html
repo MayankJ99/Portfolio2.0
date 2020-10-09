@@ -177,7 +177,7 @@
             {% for work in works %}
                 <div class="col l6 s12 m6">
 
-                    <div style="border-radius: 10px; background-color: #86868A" class="card medium hoverable">
+                    <div style="border-radius: 10px; background-color: #86868A" class="card hoverable">
                         <div class="card-image">
                             <a href="#work{{ work.pk }}" class="modal-trigger"><img
                                     src="{{ work.cover.url }}" 
@@ -186,7 +186,7 @@
 
                         <a href="#work{{ work.pk }}" class="modal-trigger">
                             <div class="card-content">
-                                <h5 class="left-align grey-text text-darken-3">{{ work.company }}</h5>
+                                <h5 class="left-align grey-text flow-text text-darken-3">{{ work.company }}</h5>
                                 <p class="left-align white-text">{{ work.position }}</p>
                                 
                             </div>
@@ -390,7 +390,7 @@
             <div id="email" class="center-align">
                 <a class="btn btn-small white-text brown center-align" href="mailto:{{ profile.user.email }}"
                    style="border-radius: 20px">Email me</a>
-                <a class="btn brown btn-small white-text center-align" href="{% static 'Mayank_Jha (1).pdf' %}"
+                <a class="btn brown btn-small white-text center-align" href="{% static 'Mayank_Jha (5).pdf' %}"
                    target="_blank" rel="noopener" style="border-radius: 20px">Resume</a>
             </div>
         </div>
