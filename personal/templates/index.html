@@ -195,7 +195,7 @@
 
                         <div id="work{{ work.pk }}" class="modal grey">
                             <div class="modal-content">
-                            <a href = "javascript:void(0);" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
+                            <a href = "#work{{ work.pk }}" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
 
                                 <h3 class="left-align grey-text text-darken-3">{{ work.position }}</h3>
                                 <h3 class="left-align grey-text text-darken-3">{{ work.company }}</h3>
@@ -262,7 +262,7 @@
 
                         <div id="project{{ project.pk }}" class="modal grey">
                             <div class="modal-content">
-                            <a href = "javascript:void(0);" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
+                            <a href = "#project{{ project.pk }}" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
                                 <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
                                 <p class="left-align black-text">{{ project.date }}</p>
 
@@ -322,7 +322,7 @@
 
             </div>
         </div>
-        <a href="{% url 'bloglist'%}"><p class="black-text center-align">Check out my blog.</p></a>
+        <a href="{% url 'bloglist'%}"><p class="black-text center-align">Also, do check out my blog.</p></a>
         {% comment %} <div class="center-align">
 
                 <iframe class="center-align" src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="300" height="80" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>
