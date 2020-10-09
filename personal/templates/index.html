@@ -126,19 +126,25 @@
 <section id="quotes" class="section scrollspy" style="margin-bottom: 0px;">
 
     <div class="container row">
-        <div class="col xl6 l6 m6 s12">
+        <div class="col xl6 l6 m12 s12">
             <br>
             <br>
             <br>
 
-            <div class="container">
+            <div class="container hide-on-med-and-down">
                 <img style="background-color: #3F3F45" src="{% static_webp 'mayankjha813_transparent_poker.png' %}" alt="404" height="350" width="350"
-                     class="circle responsive-img">
+                     class="circle responsive-img ">
+            
+            </div>
+             <div class="container hide-on-large-only">
+                <img style="background-color: #3F3F45" src="{% static_webp 'mayankjha813_transparent_poker.png' %}" alt="404" height="350" width="350"
+                     class="circle responsive-img center-align">
+            
             </div>
 
         </div>
         <div class="col xl1"></div>
-        <div class="col xl5 l6 m6 s12">
+        <div class="col xl5 l6 m12 s12">
             <h1 class="grey-text text-darken-3 hide-on-small-only "> Hi, </h1>
             <h2 class="black-text hide-on-small-only ">I'm {{ profile.user.first_name }}.</h2>
             <h3 class="black-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h3>
