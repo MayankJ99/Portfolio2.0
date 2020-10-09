@@ -1,22 +1,13 @@
-from django.contrib.postgres.fields import ArrayField
-from django.db import models
-from django.contrib.auth import models as auth_models
 from django.contrib.auth import get_user_model
+from django.contrib.auth import models as auth_models
+from django.contrib.contenttypes.fields import GenericRelation
+from django.db import models
 # from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy, reverse
-import misaka
-from django.db.models import Count
-
-from django import template
-from io import BytesIO
-from PIL import Image
-from django.core.files import File
-from tinymce import models as tinymce_models
+from hitcount.models import HitCount
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
-from hitcount.models import HitCountMixin, HitCount
-from django.contrib.contenttypes.fields import GenericRelation
+from tinymce import models as tinymce_models
 
 # Create your models here.
 CurrentUser = get_user_model()
@@ -136,3 +127,19 @@ class Blog(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+class Comment(models.Model):
+    post = models.ForeignKey('Blog', related_name='comments',on_delete=models.CASCADE)
+    author = models.CharField(max_length=200)
+    email = models.EmailField(blank=True, null=True)
+    comment = models.CharField(max_length=200)
+    created_date = models.DateTimeField(auto_now=True)
+    approved_comment = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+
+    class Meta:
+        ordering = ['-created_date']

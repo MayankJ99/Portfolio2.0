@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import UserProfile, Work, Project, Intro, Blog
-from . import models
 from mce_filebrowser.admin import MCEFilebrowserAdmin
+
+from .models import UserProfile, Work, Project, Intro, Blog
 
 
 class MyModelAdmin(MCEFilebrowserAdmin):

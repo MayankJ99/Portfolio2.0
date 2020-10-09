@@ -1,20 +1,15 @@
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_list_or_404, get_object_or_404, redirect
-from django.http import HttpResponse
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, TemplateView, UpdateView, DeleteView, ListView, DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.http import Http404
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy, reverse
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
+
 from . import forms
 # from braces.views import SelectRelatedMixin
 from . import models
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 from django.contrib import messages
-
-from django.http import JsonResponse
-from django.forms.models import model_to_dict
 
 
 def handler404(request, *args, **argv):
@@ -36,9 +31,9 @@ def blogList(request):
 class blogDetail(DetailView):
     model = models.Blog
     count_hit = True
-
+    comment = forms.CommentForm()
+    
     template_name = 'blog_detail.html'
-
 
 def index(request):
     me = models.UserProfile.objects.get(user__username="mayank")
@@ -91,8 +86,9 @@ class deleteArticle(LoginRequiredMixin, DeleteView):
 class updateArticle(LoginRequiredMixin, UpdateView):
     model = models.Blog
     fields = ['title', 'cover', 'content']
-    success_url = reverse_lazy('bloglist')
     template_name = 'updateBlog.html'
+    def get_success_url(self):
+        return reverse('bloglist', kwargs={"pk": self.pk})
 
 
 class CreateWork(LoginRequiredMixin, CreateView):
