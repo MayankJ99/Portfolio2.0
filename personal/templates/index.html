@@ -47,11 +47,12 @@
                         src="{% static_webp 'mayankjha813_transparent_poker.png' %}"
                         style="height: 100px; width: 100px; " alt="404"></a>
                 <ul class="right hide-on-med-and-down">
+                 <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}"
+                           class="grey-text text-darken-3">Blog</a></li>
                     <li><a style="font-size: 1.3em;" href="#experience" class="grey-text text-darken-3">Experience</a>
                     </li>
                     <li><a style="font-size: 1.3em;" href="#projects" class="grey-text text-darken-3">Projects</a></li>
-                    <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}"
-                           class="grey-text text-darken-3">Blog</a></li>
+                   
 
                     <li><a style="font-size: 1.3em;" href="#about" class="grey-text text-darken-3">About</a></li>
                     <li><a style="font-size: 1.3em;" href="#contact" class="grey-text text-darken-3">Contact</a></li>
@@ -86,9 +87,10 @@
         <li>
             <div class="divider grey darken-2 "></div>
         </li>
+        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="white-text">Blog</a></li>
+
         <li><a style="font-size: 1.3em;" href="#experience" class="white-text">Experience</a></li>
         <li><a style="font-size: 1.3em;" href="#projects" class="white-text">Projects</a></li>
-        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="white-text">Blog</a></li>
         <li><a style="font-size: 1.3em;" href="#about" class="white-text">About</a></li>
         <li><a style="font-size: 1.3em;" href="#contact" class="white-text">Contact</a></li>
         {% if user.is_authenticated %}
@@ -175,7 +177,7 @@
             {% for work in works %}
                 <div class="col l6 s12 m6">
 
-                    <div style="border-radius: 10px; background-color: #86868A" class="card hoverable">
+                    <div style="border-radius: 10px; background-color: #86868A" class="card medium hoverable">
                         <div class="card-image">
                             <a href="#work{{ work.pk }}" class="modal-trigger"><img
                                     src="{{ work.cover.url }}" 
@@ -193,7 +195,7 @@
 
                         <div id="work{{ work.pk }}" class="modal grey">
                             <div class="modal-content">
-                            <a class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
+                            <a href = "#" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
 
                                 <h3 class="left-align grey-text text-darken-3">{{ work.position }}</h3>
                                 <h3 class="left-align grey-text text-darken-3">{{ work.company }}</h3>
@@ -260,7 +262,7 @@
 
                         <div id="project{{ project.pk }}" class="modal grey">
                             <div class="modal-content">
-                            <a class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
+                            <a href = "#" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
                                 <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
                                 <p class="left-align black-text">{{ project.date }}</p>
 
