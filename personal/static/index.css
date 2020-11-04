@@ -37,6 +37,11 @@ body {
     color: black;
 }
 
+.input-field [type=file] {
+    color: black;
+
+}
+
 .input-field [type=email] {
     color: black;
 }

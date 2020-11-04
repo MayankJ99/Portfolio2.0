@@ -169,6 +169,9 @@ def EditProfile(request):
             if 'profile_pic' in request.FILES:
                 print('got a picture')
                 profile.profile_pic = request.FILES['profile_pic']
+            if 'resume' in request.FILES:
+                print('got a picture')
+                profile.resume = request.FILES['resume']                
 
             user.save()
             profile.save()

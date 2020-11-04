@@ -401,7 +401,7 @@
             <div id="email" class="center-align">
                 <a class="btn btn-small white-text brown center-align" href="mailto:{{ profile.user.email }}"
                    style="border-radius: 20px">Email me</a>
-                <a class="btn brown btn-small white-text center-align" href="{% static 'Mayank_Jha (5).pdf' %}"
+                <a class="btn brown btn-small white-text center-align" href="{{ profile.resume.url}}""
                    target="_blank" rel="noopener" style="border-radius: 20px">Resume</a>
             </div>
         </div>

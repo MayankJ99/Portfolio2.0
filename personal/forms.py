@@ -17,7 +17,7 @@ class UserEditForm(UserChangeForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('profile_pic', 'bio', 'location', 'occupation', 'linkedin', 'github', 'instagram', 'quote')
+        fields = ('profile_pic', 'bio', 'location', 'occupation', 'linkedin', 'github', 'instagram', 'quote', 'resume')
 
 class CommentForm(forms.ModelForm):
     class Meta:
