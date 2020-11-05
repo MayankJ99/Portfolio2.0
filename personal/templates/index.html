@@ -352,7 +352,7 @@
         <div class="row">
 
             {% if profile.linkedin %}
-                <div id="linkedin" class="col l4 m6 s12 center-align">
+                <div id="linkedin" class="col l3 m6 s12 center-align">
 
                     <a href="{{ profile.linkedin }}" target="_blank" rel="noopener"><img
                             src="{% static_webp 'linkedin.png' %}"
@@ -367,7 +367,7 @@
                 </div>
             {% endif %}
             {% if profile.github %}
-                <div id="github" class="col l4 m6 s12 center-align">
+                <div id="github" class="col l3 m6 s12 center-align">
                     <a href="{{ profile.github }}" target="_blank" rel="noopener"> <img
                             src="{% static_webp 'github-mark.png' %}"
                             style="height: 75px; width: 75px;"
@@ -382,7 +382,7 @@
 
 
             {% if profile.instagram %}
-                <div id="insta" class="col l4 m6 s12 center-align">
+                <div id="insta" class="col l3 m6 s12 center-align">
                     <a href="{{ profile.instagram }}" target="_blank" rel="noopener"> <img
                             src="{% static_webp 'insta.png' %}"
                             style="height: 75px; width: 75px;"
@@ -395,8 +395,21 @@
                     </h6>
                 </div>
             {% endif %}
+            <div id="insta" class="col l3 m6 s12 center-align">
+                    <a href="https://dev.to/mayanksjha" target="_blank" rel="noopener"> <img
+                            src="{% static_webp 'devto.png' %}"
+                            style="height: 75px; width: 75px;"
+                            class="circle responsive-img" alt="404"
+                            loading="lazy">
+                    </a>
+                    <br>
+                    <h6><a class="black-text center align" href="https://dev.to/mayanksjha" target="_blank"
+                           rel="noopener">Dev.to</a>
+                    </h6>
+                </div>
         </div>
 
+   
         <div class="center-align">
             <div id="email" class="center-align">
                 <a class="btn btn-small white-text brown center-align" href="mailto:{{ profile.user.email }}"

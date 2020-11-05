@@ -37,8 +37,9 @@ body {
     color: black;
 }
 
-.input-field [type=file] {
+.file-field .input-field[type=file] {
     color: black;
+    background-color: black;
 
 }
 
