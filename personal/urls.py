@@ -25,5 +25,5 @@ urlpatterns = [
     re_path(r"updateArticle/(?P<pk>\d+)/$", views.updateArticle.as_view(), name="blog-update"),
     re_path(r'^tinymce/', include('tinymce.urls')),
 ]
-handler404 = views.handler404
-handler500 = views.handler500
+# handler404 = views.handler404
+# handler500 = views.handler500

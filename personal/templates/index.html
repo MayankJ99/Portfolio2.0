@@ -13,7 +13,7 @@
     <meta name="google-site-verification" content="ChBJDT74QfQB3NzKlNamOU9o0FaTzl7YAhxqn6Ildb0"/>
     <title>Mayank Jha</title>
     <link rel="apple-touch-icon" href="{% static_webp 'mayankjha813_transparent_poker.png' %}">
-    <link rel="stylesheet" href="{% static '/index.css' %} ">
+    <link rel="stylesheet" href="{% static 'index.css' %} ">
     <link rel="icon" href=" {% static_webp 'mayankjha813_transparent_poker.png' %}"
           type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
@@ -152,7 +152,6 @@
                 {% for quote in quotes %}
                     <blockquote style="border-color: #3F3F45">
                         <h4 class=" black-text center-align-on-small">{{ quote.quote | linebreaksbr }}</h4>
-
                     </blockquote>
                 {% endfor %}
             </div>

@@ -16,7 +16,7 @@
       <change beforePath="$PROJECT_DIR$/personal/migrations/0016_auto_20200904_1344.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal/migrations/0016_auto_20200904_1344.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/personal/migrations/0017_auto_20200909_1025.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal/migrations/0017_auto_20200909_1025.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/personal/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personal/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/personal/static/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personal/staticindex.css" beforeDir="false" afterPath="$PROJECT_DIR$/personal/staticindex.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/personal/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/personal/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/personal/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/personal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal/urls.py" afterDir="false" />
@@ -95,7 +95,7 @@
         </entry>
       </file>
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/personal/static/index.css">
+        <entry file="file://$PROJECT_DIR$/personal/staticindex.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
@@ -182,7 +182,7 @@
         <option value="$PROJECT_DIR$/personal/templates/blog_detail.html" />
         <option value="$PROJECT_DIR$/personal/views.py" />
         <option value="$PROJECT_DIR$/personal/templates/index.html" />
-        <option value="$PROJECT_DIR$/personal/static/index.css" />
+        <option value="$PROJECT_DIR$/personal/staticindex.css" />
       </list>
     </option>
   </component>
@@ -643,7 +643,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal/static/index.css">
+    <entry file="file://$PROJECT_DIR$/personal/staticindex.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
