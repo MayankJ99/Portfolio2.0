@@ -8,7 +8,6 @@ from hitcount.models import HitCount
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 from tinymce import models as tinymce_models
-from markdownx.models import MarkdownxField
 
 # Create your models here.
 CurrentUser = get_user_model()
