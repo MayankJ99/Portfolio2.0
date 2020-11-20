@@ -111,8 +111,8 @@ class Intro(models.Model):
 class Blog(models.Model):
     user = models.ForeignKey(CurrentUser, related_name='blogger', on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now=True)
-    # content = tinymce_models.HTMLField(blank=True, null=True)
-    content = MarkdownxField(blank=True, null=True)
+    content = tinymce_models.HTMLField(blank=True, null=True)
+    # content = MarkdownxField(blank=True, null=True)
 
     cover = ProcessedImageField(upload_to='images/',
                                            processors=[ResizeToFill(1280, 720)],

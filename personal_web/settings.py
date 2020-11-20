@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     "filebrowser",
     "imagekit",
     "hitcount",
-    "markdownx"
 ]
 
 MIDDLEWARE = [
