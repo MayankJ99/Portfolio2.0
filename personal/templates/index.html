@@ -312,22 +312,26 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col l4 m12 s12">
+            <div class="col l12 m12 s12">
+                <div class='center-align'>
+                    <img src="{{ profile.profile_pic.url }}" height="400" width="400" class="circle responsive-img center-align"alt="404">
 
-                <img src="{{ profile.profile_pic.url }}" height="200" width="200" class="circle center-align" alt="404"
-                     loading="lazy" style="margin-left: auto; margin-right: auto; display: block">
-                <p class="black-text center-align"> {{ profile.user.first_name }} {{ profile.user.last_name }}</p>
-                <p class="black-text center-align">{{ profile.location }}</p>
-                <p class="black-text center-align">{{ profile.occupation }}</p>
+                </div>
+                <h5 class="black-text center-align" > {{ profile.user.first_name }} {{ profile.user.last_name }}</h5>
+                <p class="black-text center-align" style="font-size: 1.2em;">{{ profile.location }}</p>
+                <p class="black-text center-align" style="font-size: 1.2em;">{{ profile.occupation }}</p>
 
 
             </div>
-            <div class="col l8 m12 s12">
-                <p class="black-text center-align">{{ profile.bio | linebreaksbr }}</p>
+            <div class="container">
+    <div class="divider grey darken-2"></div>
+</div>
+            <div class="col l12 m12 s12">
+                <p class="black-text center-align" style="font-size: 1.2em;">{{ profile.bio | linebreaksbr }}</p>
 
             </div>
         </div>
-        <a href="{% url 'bloglist'%}"><p class="black-text center-align">Also, do check out my blog.</p></a>
+        <a href="{% url 'bloglist'%}"><p style="font-size: 1.2em;" class="black-text center-align">Also, do check out my blog.</p></a>
         {% comment %} <div class="center-align">
 
                 <iframe class="center-align" src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="300" height="80" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>
@@ -413,7 +417,7 @@
             <div id="email" class="center-align">
                 <a class="btn btn-small white-text brown center-align" href="mailto:{{ profile.user.email }}"
                    style="border-radius: 20px">Email me</a>
-                <a class="btn brown btn-small white-text center-align" href="{{ profile.resume.url}}""
+                <a class="btn brown btn-small white-text center-align" href="{{ profile.resume.url}}"
                    target="_blank" rel="noopener" style="border-radius: 20px">Resume</a>
             </div>
         </div>
@@ -455,7 +459,5 @@
             hoverEnabled: false
         });
     });
-</script>
-<script>
 </script>
 </html>
