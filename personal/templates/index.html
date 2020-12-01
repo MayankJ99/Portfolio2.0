@@ -204,16 +204,16 @@
 
                                 <h3 class="left-align grey-text text-darken-3">{{ work.position }}</h3>
                                 <h3 class="left-align grey-text text-darken-3">{{ work.company }}</h3>
-                                                            <p class="left-align black-text">{{ work.location }}</p>
+                                                            <p style="font-size: 1.2em;" class="left-align black-text">{{ work.location }}</p>
 
                                 {% if work.end_date %}
-                                    <p class="left-align black-text">{{ work.start_date }} - {{ work.end_date }}</p>
+                                    <p style="font-size: 1.2em;" class="left-align black-text">{{ work.start_date }} - {{ work.end_date }}</p>
                                 {% else %}
-                                    <p class="left-align black-text">{{ work.start_date }} - Present</p>
+                                    <p style="font-size: 1.2em;"  class="left-align black-text">{{ work.start_date }} - Present</p>
                                 {% endif %}
                                 <div class="divider grey darken-2" style="width: 30%"></div>
 
-                                <p class="left-align black-text">{{ work.full_description | linebreaksbr }}</p>
+                                <p class="left-align black-text" style="font-size: 1.2em;">{{ work.full_description | linebreaksbr }}</p>
                                 </br>
                                 {% if user.is_authenticated %}
                                     <a class="btn red btn-small" href="{% url 'deleteWork' pk=work.pk %}"
@@ -269,11 +269,11 @@
                             <div class="modal-content">
                             <a href = "#project{{ project.pk }}" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
                                 <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
-                                <p class="left-align black-text">{{ project.date }}</p>
+                                <p style="font-size: 1.2em;" class="left-align black-text">{{ project.date }}</p>
 
                                 <div class="divider grey darken-2" style="width: 30%"></div>
                                 <div class=" left-align">
-                                    <p class="left-align black-text">{{ project.full_description | linebreaksbr }}</p>
+                                    <p style="font-size: 1.2em;" class="left-align black-text">{{ project.full_description | linebreaksbr }}</p>
 
                                     {% if project.link %}
                                         <a href="{{ project.link }}" target="_blank" rel="noopener"
