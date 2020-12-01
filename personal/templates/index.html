@@ -317,9 +317,9 @@
                     <img src="{{ profile.profile_pic.url }}" height="400" width="400" class="circle responsive-img center-align"alt="404">
 
                 </div>
-                <h5 class="black-text center-align" > {{ profile.user.first_name }} {{ profile.user.last_name }}</h5>
-                <p class="black-text center-align" style="font-size: 1.2em;">{{ profile.location }}</p>
-                <p class="black-text center-align" style="font-size: 1.2em;">{{ profile.occupation }}</p>
+                <h4 class="black-text center-align" > {{ profile.user.first_name }} {{ profile.user.last_name }}</h4>
+                <p class="black-text center-align" style="font-size: 1.4em;">{{ profile.location }}</p>
+                <p class="black-text center-align" style="font-size: 1.4em;">{{ profile.occupation }}</p>
 
 
             </div>
@@ -327,11 +327,11 @@
     <div class="divider grey darken-2"></div>
 </div>
             <div class="col l12 m12 s12">
-                <p class="black-text center-align" style="font-size: 1.2em;">{{ profile.bio | linebreaksbr }}</p>
+                <p class="black-text center-align" style="font-size: 1.4em;">{{ profile.bio | linebreaksbr }}</p>
 
             </div>
         </div>
-        <a href="{% url 'bloglist'%}"><p style="font-size: 1.2em;" class="black-text center-align">Also, do check out my blog.</p></a>
+        <a href="{% url 'bloglist'%}"><p style="font-size: 1.4em;" class="black-text center-align">Also, do check out my blog.</p></a>
         {% comment %} <div class="center-align">
 
                 <iframe class="center-align" src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="300" height="80" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>
