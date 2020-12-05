@@ -88,7 +88,7 @@ class updateArticle(LoginRequiredMixin, UpdateView):
     fields = ['title', 'cover', 'content']
     template_name = 'updateBlog.html'
     def get_success_url(self):
-        return reverse('bloglist', kwargs={"pk": self.pk})
+        return reverse('bloglist')
 
 
 class CreateWork(LoginRequiredMixin, CreateView):

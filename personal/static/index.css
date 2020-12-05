@@ -14,6 +14,7 @@ body {
 
 #blog_content p{
     line-height: 1.1 !important;
+    font-size: 1.5em
 }
 
    /* label color */

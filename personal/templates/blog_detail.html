@@ -134,7 +134,7 @@
 
 <img src="{{ blog.cover.url }}" class="responsive-img" style="width: 100%; height: auto;" >
 
-<h2 class="black-text flow-text center-align flow-text" style="font-size: 2.0em">{{ blog.title }}</h2>
+<h2 class="black-text center-align" >{{ blog.title }}</h2>
 <a href="{% url 'bloglist' %}"><p style="font-size: 1.0em;" class="flow-text left-align black-text">Back to Articles</p></a>
 
     <p class="black-text flow-text left-align" style="font-size: 0.9em; display: inline">{{ blog.created_at }}</p>
@@ -145,7 +145,7 @@
     <div class="divider grey darken-2" style="margin-bottom: 40px;"></div>
 
 
-    <div id="blog_content" class="flow-text">
+    <div id="blog_content" class="">
         {{ blog.content | safe }}
     </div>
     <div class="divider grey darken-2" style="margin-bottom: 45px;"></div>
