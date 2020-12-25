@@ -47,7 +47,8 @@
                         src="{% static_webp 'mayankjha813_transparent_poker.png' %}"
                         style="height: 100px; width: 100px; " alt="404"></a>
                 <ul class="right hide-on-med-and-down">
-                 <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}"
+                 <li><a style="font-size: 1.3em;" href="https://dev.to/mayanksjha" target="_blank"
+                           rel="noopener"
                            class="grey-text text-darken-3">Blog</a></li>
                     <li><a style="font-size: 1.3em;" href="#experience" class="grey-text text-darken-3">Experience</a>
                     </li>
@@ -87,7 +88,8 @@
         <li>
             <div class="divider grey darken-2 "></div>
         </li>
-        <li><a style="font-size: 1.3em;" href="{% url 'bloglist' %}" class="white-text">Blog</a></li>
+        <li><a style="font-size: 1.3em;" href="https://dev.to/mayanksjha" target="_blank"
+                           rel="noopener" class="white-text">Blog</a></li>
 
         <li><a style="font-size: 1.3em;" href="#experience" class="white-text">Experience</a></li>
         <li><a style="font-size: 1.3em;" href="#projects" class="white-text">Projects</a></li>
@@ -177,12 +179,12 @@
 <section id="experience" class="section scrollspy">
     <h4 class="black-text center-align"> Experience</h4>
     <br>
-    <div class="container">
+    <div class="container center-align">
         <div class="row">
             {% for work in works %}
                 <div class="col l6 s12 m6">
 
-                    <div style="border-radius: 10px; background-color: #86868A" class="card hoverable">
+                    <div style="border-radius: 7px; background-color: #86868A" class="card small hoverable">
                         <div class="card-image">
                             <a href="#work{{ work.pk }}" class="modal-trigger"><img
                                     src="{{ work.cover.url }}" 
@@ -331,7 +333,8 @@
 
             </div>
         </div>
-        <a href="{% url 'bloglist'%}"><p style="font-size: 1.4em;" class="black-text center-align">Also, do check out my blog.</p></a>
+        <a href="https://dev.to/mayanksjha" target="_blank"
+                           rel="noopener"><p style="font-size: 1.4em;" class="black-text center-align">Also, do check out my blog.</p></a>
         {% comment %} <div class="center-align">
 
                 <iframe class="center-align" src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="300" height="80" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>

@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     "storages",
     "webp_converter",
     "tinymce",
-    "filebrowser",
     "imagekit",
     "hitcount",
 ]
