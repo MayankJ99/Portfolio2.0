@@ -4,463 +4,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Hi! I am Mayank Jha. This is my personal website.">
-    <meta name="keywords"
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Mayank Jha</title>
+  <meta name="description" content="Hi! I am Mayank Jha. This is my personal website.">
+  <meta name="keywords"
           content="HTML, CSS, JavaScript, Django, Mayank, Jha, Mayank Jha, MJ, Mayank J, Personal, Website, Portfolio, Software, Engineer, Developer, Computer, Science, Engineering, Amazon, University at Buffalo, UB, CSE, SWE, SDE">
-    <meta name="author" content="Mayank S Jha">
-    {% comment %} <meta name="theme-color" content="#1d1d1d"/> {% endcomment %}
-    <meta name="google-site-verification" content="ChBJDT74QfQB3NzKlNamOU9o0FaTzl7YAhxqn6Ildb0"/>
-    <title>Mayank Jha</title>
-    <link rel="apple-touch-icon" href="{% static_webp 'mayankjha813_transparent_poker.png' %}">
-    <link rel="stylesheet" href="{% static 'index.css' %} ">
-    <link rel="icon" href=" {% static_webp 'mayankjha813_transparent_poker.png' %}"
-          type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <!-- Compiled and minified CSS -->
+  <meta name="author" content="Mayank S Jha">
+  <meta name="google-site-verification" content="ChBJDT74QfQB3NzKlNamOU9o0FaTzl7YAhxqn6Ildb0"/>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /></head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.8.2/devicon.min.css">
+ 
+  <link rel="apple-touch-icon" href="{% static_webp 'mayankjha813_transparent_poker.png' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %} ">
+    <link rel="icon" href=" {% static_webp 'mayankjha813_transparent_poker.png' %}"
+          type="image/x-icon">
 
+  <body style='background-color: #f8f8f8'>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-</head>
-<body style="background-color : #C9A690">
-
-<div style="margin-bottom: 0px;" class="navbar transparent">
-    <nav style="line-height: 90px;" class="transparent z-depth-0">
-        <div class="nav-wrapper ">
-            <div class="container">
-                <div class="container">
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right black-text"
-                       style="margin-top: 5px"><i class="material-icons">menu</i></a>
-
-                </div>
-
-            </div>
-
-            <div class="container">
-                <a href="#quotes" class="brand-logo left"><img
-                        src="{% static_webp 'mayankjha813_transparent_poker.png' %}"
-                        style="height: 100px; width: 100px; " alt="404"></a>
-                <ul class="right hide-on-med-and-down">
-                 <li><a style="font-size: 1.3em;" href="https://dev.to/mayanksjha" target="_blank"
-                           rel="noopener"
-                           class="grey-text text-darken-3">Blog</a></li>
-                    <li><a style="font-size: 1.3em;" href="#experience" class="grey-text text-darken-3">Experience</a>
-                    </li>
-                    <li><a style="font-size: 1.3em;" href="#projects" class="grey-text text-darken-3">Projects</a></li>
+  <nav class="transparent z-depth-0" role="navigation" >
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="black-text brand-logo hide-on-med-and-down">MAYANK JHA.</a>
+      <ul class="right ">
+       <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#about"
+                           class="black-text">About</a></li>
+        <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#experiences"
+                           class="black-text">Experience</a></li>
+                    <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#projects"
+                           class="black-text">Projects</a></li>
                    
-
-                    <li><a style="font-size: 1.3em;" href="#about" class="grey-text text-darken-3">About</a></li>
-                    <li><a style="font-size: 1.3em;" href="#contact" class="grey-text text-darken-3">Contact</a></li>
+                    <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#skills"
+                           class="black-text">Skills</a></li>
+                    <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#contact"
+                           class="black-text">Contact</a></li>
                     {% if user.is_authenticated %}
-                        <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
-                               class="grey-text text-darken-3">Logout</a></li>
-                        <li><a style="font-size: 1.3em;" href="{% url 'edit' %}" class="grey-text text-darken-3">Edit
-                            Profile</a></li>
+                    <li><a style="font-size: 1.2em;" href="{% url 'edit' %}"
+                               class="black-text">Edit</a></li>
+                        <li><a style="font-size: 1.2em;" href="{% url 'personal-logout' %}"
+                               class="black-text">Logout</a></li>
                     {% else %}
-                        <li><a style="font-size: 1.3em;" href="{% url 'personal-login' %}"
-                               class="grey-text text-darken-3">Login</a></li>
+                        <li><a style="font-size: 1.2em;" href="{% url 'personal-login' %}"
+                               class="black-text">Login</a></li>
 
                     {% endif %}
 
-
-                </ul>
-
-
-            </div>
-
-        </div>
-    </nav>
-    <ul class="sidenav right" id="mobile-demo" style="background-color: #3E4E59;">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                </div>
-                <img class="circle" src="{{ profile.profile_pic.url }}" alt="404">
-                <span style="font-size: 1.7em;" class="white-text">Mayank Jha</span>
-            </div>
-        </li>
-        <li>
-            <div class="divider grey darken-2 "></div>
-        </li>
-        <li><a style="font-size: 1.3em;" href="https://dev.to/mayanksjha" target="_blank"
-                           rel="noopener" class="white-text">Blog</a></li>
-
-        <li><a style="font-size: 1.3em;" href="#experience" class="white-text">Experience</a></li>
-        <li><a style="font-size: 1.3em;" href="#projects" class="white-text">Projects</a></li>
-        <li><a style="font-size: 1.3em;" href="#about" class="white-text">About</a></li>
-        <li><a style="font-size: 1.3em;" href="#contact" class="white-text">Contact</a></li>
-        {% if user.is_authenticated %}
-            <li><a style="font-size: 1.3em;" href="{% url 'personal-logout' %}"
-                   class="white-text">Logout</a>
-            </li>
-        {% else %}
-            <li><a style="font-size: 1.3em;" href="{% url 'personal-login' %}"
-                   class="white-text">Login</a>
-            </li>
-
-        {% endif %}
-    </ul>
-</div>
-
-{% if user.is_authenticated %}
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
-            <i class="large material-icons">mode_edit</i>
-        </a>
-        <ul>
-            <li><a href="{% url 'work' %}" class="btn-floating blue"><i class="material-icons">work</i> </a></li>
-            <li><a href="{% url 'create' %}" class="btn-floating green"><i class="material-icons">web_asset</i></a></li>
-            <li><a href="{% url 'quote' %}" class="btn-floating red"><i class="material-icons">format_quote</i></a></li>
-
-        </ul>
+      </ul>
+    
     </div>
+  </nav>
+
+  {% if user.is_authenticated %}
+  <div class="fixed-action-btn">
+      <a class="btn-floating btn-large red">
+          <i class="large material-icons">mode_edit</i>
+      </a>
+      <ul>
+          <li><a href="{% url 'work' %}" class="btn-floating blue"><i class="material-icons">work</i> </a></li>
+          <li><a href="{% url 'create' %}" class="btn-floating green"><i class="material-icons">web_asset</i></a></li>
+          <li><a href="{% url 'quote' %}" class="btn-floating red"><i class="material-icons">format_quote</i></a></li>
+
+      </ul>
+  </div>
 {% endif %}
 
 
+  <div class="container valign-wrapper" style="height: 100vh; ">
+    
+    <div class="">
+
+      <!--   Icon Section   -->
+      <div class="row ">
+
+        <!-- <div class="container hide-on-med-and-up center-align" style="padding-top: 50px">
+          <img src='https://collegehub-442.s3.amazonaws.com/images/mayankjha813_poker.png' class="circle responsive-img" height="250px" width="250px">
+        </div> -->
+
+        <div class="col s12 m4 l4">
+          <div class="hide-on-small-only">
+            <img src={{profile.profile_pic.url}} class="circle responsive-img" height="500" width='500' >
+          </div>
+          <div class="hide-on-med-and-up center-align">
+            <img src={{profile.profile_pic.url}} class="circle responsive-img" height="250" width='250'>
+          </div>
+        </div>
+
+        <div class="col s12 m8 l8">
+          <h4 class="black-text">Hi, I'm <strong>Mayank Jha</strong></h4>
+          {% for quote in quotes %}
+          <h5 class="black-text">{{quote}}</h5>
+          {% endfor %}
+         
+
+          <div id="icons" style="padding-top: 30px">
+            <a target="_blank" rel="noopener" style ='color: black;' href="http://github.com/MayankJ99"><i class="fab fa-github fa-2x" style="padding-right: 15px;"></i></a> 
+            <a target="_blank" rel="noopener" style ='color: black;' href="http://linkedin.com/in/mayanksjha"><i class="fab fa-linkedin fa-2x" style="padding-right: 15px;"></i></a> 
+            <a target="_blank" rel="noopener" style ='color: black;'  href="http://instagram/MayankJ_14"><i class="fab fa-instagram fa-2x" style="padding-right: 15px;"></i></a>
+            <a target="_blank" rel="noopener" style ='color: black;'  href="https://mayanksjha.medium.com/"><i class="fab fa-medium-m fa-2x" style="padding-right: 15px;"></i></a>
+            <a target="_blank" rel="noopener" style ='color: black;'  href="http://dev.to/mayanksjha "><i class="fab fa-dev fa-2x" style="padding-right: 15px;"></i></a>
+      
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+    
+  </div>
 
 
-<section id="quotes" class="section scrollspy" style="margin-bottom: 0px;">
+  <!-- background-color: #f3f2f0;" -->
+  <div id='about' data-aos="fade-up" class="">
+    <div class="container" style=" padding-top: 20px;">
+      <h4 class="about me">Few Words About Me</h4>
+      <hr>
+      <p class="black-text" style="font-size: 1.1em;">{{profile.bio | linebreaksbr}}
+    </div>
+  </section>
 
-    <div class="container row">
-        <div class="col xl6 l6 m12 s12">
-            <br>
-            <br>
-            <br>
+  <section id="experiences">
+    <div class="container" data-aos="fade-up" >
+        <h4 class="black-text">Experiences</h4>
+        <hr>
 
-            <div class="container hide-on-med-and-down">
-                <img style="background-color: #3F3F45" src="{% static_webp 'mayankjha813_transparent_poker.png' %}" alt="404" height="350" width="350"
-                     class="circle responsive-img ">
+    </div>
+    <div class="container" style="padding-top: 20px;">
+        {% for work in works %}
+        <div id="experience" style="padding-bottom: 25px;">
+                <h5 class="black-text" id='Company'>{{work.company}}</h5>
+                <h6 class="grey-text text-darken-3" id='position'>{{work.position}}</h6>
+                {% if work.end_date %}
+                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.1em;">{{work.start_date}} - {{work.end_date}}</p>
+                {% else %}
+                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.1em;">{{work.start_date}}- Present</p>
+                {% endif %}
+                <p class="black-text" id="description" style="font-size: 1.1em;">{{work.full_description}}</p>
+                {% if user.is_authenticated%}
+                <a href={% url 'deleteWork' pk=work.pk %} class="btn grey darken-4" style="border-radius: 20px;">Delete</a>
+                <a href={% url 'updateWork' pk=work.pk %} class="btn grey darken-4" style="border-radius: 20px;">Update</a>
+              {% endif %}
             
+        </div>
+        {% endfor %}
+      
+
+    </div>
+
+  </section>
+
+  <section id="projects" >
+    <div class="container">
+        <h4 class="black-text">Prominent Projects</h4>
+        <hr>
+
+    </div>
+    <div class="container" style="padding-top: 50px;">
+     
+     {% for project in projects%}
+      <div id="project" style="padding-bottom: 25px;">
+
+        <div class="row">
+          <div id="item">
+            <div class="col l7 m7 s12">
+              <div class="">
+                <img src={{project.cover.url}} alt="" class="responsive-img" id="project_image" style="height: auto; width: 100%;">
+              </div>
             </div>
-             <div class="container hide-on-large-only">
-                <img style="background-color: #3F3F45" src="{% static_webp 'mayankjha813_transparent_poker.png' %}" alt="404" height="350" width="350"
-                     class="circle responsive-img center-align">
+  
+            <div class="col l5 m5 s12">
+              <h5 class="black-text" id='Name'>{{project.name}}</h5>
+              <p class="grey-text text-darken-3" id='dates' style="font-size: 1.1em;">{{project.date}}</p>
+              <p class="black-text" id="description" style="font-size: 1.1em;">{{project.full_description}}</p>
+              <br>
+              {% if project.demo %}
+                <a href={{project.demo}} class="btn grey darken-4" style="border-radius: 20px;">Demo</a>
+              {% endif %}
+
+              {% if project.link%}
+                <a href={{project.link}} class="btn grey darken-4" style="border-radius: 20px;">Github</a>
+              {% endif %}
+
+              {% if user.is_authenticated%}
+                <a href={% url 'deleteProject' pk=project.pk %} class="btn grey darken-4" style="border-radius: 20px;">Delete</a>
+                <a href={% url 'updateProject' pk=project.pk %} class="btn grey darken-4" style="border-radius: 20px;">Update</a>
+              {% endif %}
+            </div>
+          </div>
+          
+        
+        </div>
+       
+        
+      </div>
+      {% endfor %}
+    
+    </div>
+
+  </section>
+
+  <section>
+    <div class="container">
+      <div id="skills">
+        <h4 class="black-text">Skills</h4>
+        <hr>
+        <br>
+
+        <div class="container center-align">
+         
+          <div class="row">
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646">
+                <i class="devicon-python-plain " style="font-size: 5em;"></i>
+                <p>Python</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-javascript-plain " style="font-size: 5em;"></i>
+                <p>Javascript</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-html5-plain " style="font-size: 5em;"></i>
+                <p>HTML</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-css3-plain " style="font-size: 5em;"></i>
+                <p>CSS</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-django-plain " style="font-size: 5em;"></i>
+                <p>Django</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-react-plain " style="font-size: 5em;"></i>
+                <p>React.js</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-express-original " style="font-size: 5em;"></i>
+                <p>Express.js</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-nodejs-plain " style="font-size: 5em;"></i>
+                <p>Node.js</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-scala-plain " style="font-size: 5em;"></i>
+                <p>Scala</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-cplusplus-plain " style="font-size: 5em;"></i>
+                <p>C++</p>
+              </div>
+            </div>
             
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-java-plain " style="font-size: 5em;"></i>
+                <p>Java</p>
+              </div>
             </div>
 
-        </div>
-        <div class="col xl1"></div>
-        <div class="col xl5 l6 m12 s12">
-            <h1 class="grey-text text-darken-3 hide-on-small-only "> Hi, </h1>
-            <h2 class="black-text hide-on-small-only ">I'm {{ profile.user.first_name }}.</h2>
-            <h3 class="black-text hide-on-med-and-up "> Hi, I'm {{ profile.user.first_name }}. </h3>
-            <div>
-                {% for quote in quotes %}
-                    <blockquote style="border-color: #3F3F45">
-                        <h4 class=" black-text center-align-on-small">{{ quote.quote | linebreaksbr }}</h4>
-                    </blockquote>
-                {% endfor %}
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-docker-plain " style="font-size: 5em;"></i>
+                <p>Docker</p>
+              </div>
+              
             </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-postgresql-plain " style="font-size: 5em;"></i>
+                <p>SQL</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-git-plain " style="font-size: 5em;"></i>
+                <p>Git</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-amazonwebservices-plain " style="font-size: 5em;"></i>
+                <p>AWS</p>
+              </div>
+            </div>
+            <div class="col l3 m3 s4">
+              <div class=" skill " style="color: #464646;">
+                <i class="devicon-heroku-plain " style="font-size: 5em;"></i>
+                <p>Heroku</p>
+              </div>
+            </div>
+           
 
+          </div>
+
+          <div>
+            <p style="font-size: 1.1em;">I am proficient in Python, Java, and Javascript. My specialization is backend engineering and fullstack development. Through university courses, I have gained experience with Scala, and OCaml. I have learnt several other technologies and frameworks
+              while working on side-projects such as react, redux, express, django etc. At Amazon, I worked very closely with AWS and Apache Spark. <br>
+              <br>
+              Currently, I am taking the time to explore the world of ML through Tensorflow and Keras. I am also studying about serverless stacks through AWS.
+              
+            </p>
+          </div>
         </div>
-
-
+        
+      </div>
     </div>
+  </section>
 
-</section>
-<br>
-{% if user.is_authenticated %}
-{% else %}
-    <br>
-    <br>
-    <br>
-{% endif %}
-
-<div class="container">
-    <div class="divider grey darken-2 show-on-small"></div>
-</div>
-<br>
-<section id="experience" class="section scrollspy">
-    <h4 class="black-text center-align"> Experience</h4>
-    <br>
-    <div class="container center-align">
-        <div class="row">
-            {% for work in works %}
-                <div class="col l6 s12 m6">
-
-                    <div style="border-radius: 7px; background-color: #86868A" class="card small hoverable">
-                        <div class="card-image">
-                            <a href="#work{{ work.pk }}" class="modal-trigger"><img
-                                    src="{{ work.cover.url }}" 
-                                    alt="404" loading="lazy"></a>
-                        </div>
-
-                        <a href="#work{{ work.pk }}" class="modal-trigger">
-                            <div class="card-content">
-                                <h5 class="left-align white-text flow-text text-darken-3">{{ work.company }}</h5>
-                                <p style="font-size: 1.1em;" class="left-align white-text">{{ work.position }}</p>
-                                
-                            </div>
-                        </a>
-
-
-                        <div id="work{{ work.pk }}" class="modal grey">
-                            <div class="modal-content">
-                            <a href = "#work{{ work.pk }}" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
-
-                                <h3 class="left-align grey-text text-darken-3">{{ work.position }}</h3>
-                                <h3 class="left-align grey-text text-darken-3">{{ work.company }}</h3>
-                                                            <p style="font-size: 1.2em;" class="left-align black-text">{{ work.location }}</p>
-
-                                {% if work.end_date %}
-                                    <p style="font-size: 1.2em;" class="left-align black-text">{{ work.start_date }} - {{ work.end_date }}</p>
-                                {% else %}
-                                    <p style="font-size: 1.2em;"  class="left-align black-text">{{ work.start_date }} - Present</p>
-                                {% endif %}
-                                <div class="divider grey darken-2" style="width: 30%"></div>
-
-                                <p class="left-align black-text" style="font-size: 1.2em;">{{ work.full_description | linebreaksbr }}</p>
-                                </br>
-                                {% if user.is_authenticated %}
-                                    <a class="btn red btn-small" href="{% url 'deleteWork' pk=work.pk %}"
-                                       style="border-radius: 20px">Delete</a>
-                                    <a class="btn brown lighten-1 black-text btn-small"
-                                       href="{% url 'updateWork' pk=work.pk %}" style="border-radius: 20px">Update</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-
-</section>
-<br>
-<br>
-<br>
-
-<div class="container">
-    <div class="divider grey darken-2"></div>
-</div>
-
-<section id="projects" class="section scrollspy">
-    <h4 class="black-text center-align">Featured Projects</h4>
-    <br>
+  <section id="contact">
     <div class="container">
-        <div class="row">
-            {% for project in projects %}
-                <div class="col xl6 l6 s12 m6">
+      <h4>Contact Me
+      </h4>
+      <hr>
+      <div class="center-align" style=" padding-top: 30px; padding-bottom: 50px;">
 
-                    <div style="border-radius: 10px; background-color: #86868A"
-                         class="card small hoverable ">
-                        <div class="card-image">
-                            <a href="#project{{ project.pk }}" class="modal-trigger"> <img
-                                    class="responsive-img "
-                                    src="{{ project.cover.url }}"
-                                    alt="404"
-                                    loading="lazy"> </a>
-
-                        </div>
-
-                        <a href="#project{{ project.pk }}" class="modal-trigger">
-                            <div class="card-content">
-                                <h5 class="left-align white-text text-darken-3">{{ project.name }}</h5>
-                                <p style="font-size: 1.1em;" class="left-align white-text">{{ project.short_description }}</p>
-                            </div>
-                        </a>
-
-
-                        <div id="project{{ project.pk }}" class="modal grey">
-                            <div class="modal-content">
-                            <a href = "#project{{ project.pk }}" class="btn-flat modal-action modal-close show-on-small hide-on-med-and-up right-align"><i class="material-icons">close</i></a>
-                                <h3 class="left-align grey-text text-darken-3">{{ project.name }}</h3>
-                                <p style="font-size: 1.2em;" class="left-align black-text">{{ project.date }}</p>
-
-                                <div class="divider grey darken-2" style="width: 30%"></div>
-                                <div class=" left-align">
-                                    <p style="font-size: 1.2em;" class="left-align black-text">{{ project.full_description | linebreaksbr }}</p>
-
-                                    {% if project.link %}
-                                        <a href="{{ project.link }}" target="_blank" rel="noopener"
-                                           class=" btn btn-small brown lighten-1 black-text" style="border-radius: 20px">Demo</a>
-                                    {% endif %}
-                                    {% if user.is_authenticated %}
-                                        <a class="btn red btn-small" href="{% url 'deleteProject' pk=project.pk %}"
-                                           style="border-radius: 20px">Delete</a>
-                                        <a class="btn brown lighten-1 black-text btn-small"
-                                           href="{% url 'updateProject' pk=project.pk %}" style="border-radius: 20px">Update</a>
-
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+        <h5>I'm always open to talk about new things.</h5>
+        <a href="mailto:mayanksjha@gmail.com" style="color: black"><h6>mayanksjha@gmail.com</h6></a>
+        <div class="container">
+          <div class="container divider"></div>
         </div>
-    </div>
-</section>
-
-<br>
-<br>
-
-<div class="container">
-    <div class="divider grey darken-2"></div>
-</div>
-
-
-<section id="about" class="section scrollspy" data-aos="fade-up"
-         data-aos-duration="1000">
-
-    <h4 class="black-text center-align">About me</h4>
-    <p></p>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col l12 m12 s12">
-                <div class='center-align'>
-                    <img src="{{ profile.profile_pic.url }}" height="400" width="400" class="circle responsive-img center-align"alt="404">
-
-                </div>
-                <h4 class="black-text center-align" > {{ profile.user.first_name }} {{ profile.user.last_name }}</h4>
-                <p class="black-text center-align" style="font-size: 1.4em;">{{ profile.location }}</p>
-                <p class="black-text center-align" style="font-size: 1.4em;">{{ profile.occupation }}</p>
-
-
-            </div>
-            <div class="container">
-    <div class="divider grey darken-2"></div>
-</div>
-            <div class="col l12 m12 s12">
-                <p class="black-text center-align" style="font-size: 1.4em;">{{ profile.bio | linebreaksbr }}</p>
-
-            </div>
-        </div>
-        <a href="https://dev.to/mayanksjha" target="_blank"
-                           rel="noopener"><p style="font-size: 1.4em;" class="black-text center-align">Also, do check out my blog.</p></a>
-        {% comment %} <div class="center-align">
-
-                <iframe class="center-align" src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="300" height="80" frameborder="0" allowtransparency="false" allow="encrypted-media"></iframe>
-
-        </div> {% endcomment %}
-
-    </div>
-</section>
-
-<div class="container">
-    <div class="divider grey darken-2"></div>
-</div>
-
-<section id="contact" class="section scrollspy" data-aos="fade-up"
-         data-aos-duration="1000">
-
-    <h4 class="black-text center-align">Contact Me</h4>
-    <br>
-    <br>
-    <div class="container center-align">
-        <div class="row">
-
-            {% if profile.linkedin %}
-                <div id="linkedin" class="col l3 m6 s12 center-align">
-
-                    <a href="{{ profile.linkedin }}" target="_blank" rel="noopener"><img
-                            src="{% static_webp 'linkedin.png' %}"
-                            style="height: 75px; width: 75px;"
-                            class="circle responsive-img" alt="404"
-                            loading="lazy">
-                    </a>
-                    <br>
-                    <h6><a class="black-text center align" href="{{ profile.linkedin }}" target="_blank"
-                           rel="noopener">Linkedin</a>
-                    </h6>
-                </div>
-            {% endif %}
-            {% if profile.github %}
-                <div id="github" class="col l3 m6 s12 center-align">
-                    <a href="{{ profile.github }}" target="_blank" rel="noopener"> <img
-                            src="{% static_webp 'github-mark.png' %}"
-                            style="height: 75px; width: 75px;"
-                            class="circle responsive-img" alt="404"
-                            loading="lazy">
-                        <br> </a>
-                    <h6><a class="black-text center align" href="{{ profile.github }}" target="_blank"
-                           rel="noopener">Github</a>
-                    </h6>
-                </div>
-            {% endif %}
-
-
-            {% if profile.instagram %}
-                <div id="insta" class="col l3 m6 s12 center-align">
-                    <a href="{{ profile.instagram }}" target="_blank" rel="noopener"> <img
-                            src="{% static_webp 'insta.png' %}"
-                            style="height: 75px; width: 75px;"
-                            class="circle responsive-img" alt="404"
-                            loading="lazy">
-                    </a>
-                    <br>
-                    <h6><a class="black-text center align" href="{{ profile.instagram }}" target="_blank"
-                           rel="noopener">Instagram</a>
-                    </h6>
-                </div>
-            {% endif %}
-            <div id="insta" class="col l3 m6 s12 center-align">
-                    <a href="https://dev.to/mayanksjha" target="_blank" rel="noopener"> <img
-                            src="{% static_webp 'devto.png' %}"
-                            style="height: 75px; width: 75px;"
-                            class="circle responsive-img" alt="404"
-                            loading="lazy">
-                    </a>
-                    <br>
-                    <h6><a class="black-text center align" href="https://dev.to/mayanksjha" target="_blank"
-                           rel="noopener">Dev.to</a>
-                    </h6>
-                </div>
-        </div>
-
-   
-        <div class="center-align">
-            <div id="email" class="center-align">
-                <a class="btn btn-small white-text brown center-align" href="mailto:{{ profile.user.email }}"
+        <h6>Follow me</h6>
+      <a style ='color: black;' href="http://github.com/MayankJ99"><i class="fab fa-github fa-2x" style="padding-right: 15px;"></i></a> 
+           <a target="_blank" rel="noopener" style ='color: black;' href="http://linkedin.com/in/mayanksjha"><i class="fab fa-linkedin fa-2x" style="padding-right: 15px;"></i></a> 
+            <a target="_blank" rel="noopener" style ='color: black;'  href="http://instagram/MayankJ_14"><i class="fab fa-instagram fa-2x" style="padding-right: 15px;"></i></a>
+            <a target="_blank" rel="noopener" style ='color: black;'  href="https://mayanksjha.medium.com/"><i class="fab fa-medium-m fa-2x" style="padding-right: 15px;"></i></a>
+            <a target="_blank" rel="noopener" style ='color: black;'  href="http://dev.to/mayanksjha "><i class="fab fa-dev fa-2x" style="padding-right: 15px;"></i></a>
+      
+      </div>
+      <div class="container center-align" style="padding-bottom: 30px;">
+        <a class="btn btn-small grey darken-4 center-align" href="mailto:{{ profile.user.email }}"
                    style="border-radius: 20px">Email me</a>
-                <a class="btn brown btn-small white-text center-align" href="{{ profile.resume.url}}"
+                <a class="btn btn-small  grey darken-4 center-align" href="{{ profile.resume.url}}"
                    target="_blank" rel="noopener" style="border-radius: 20px">Resume</a>
-            </div>
-        </div>
+      </div>
 
+      <p class="center-align"><em>{{profile.quote}}</em></p>
     </div>
-</section>
+  </section>
 
-<section id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l12 m12 s12">
-                <p class="black-text center-align"><em>{{ profile.quote }}</em></p>
-            </div>
-        </div>
-    </div>
-</section>
-</body>
 
-<script src="https://use.fontawesome.com/3d41ee30d1.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, {edge: 'right'});
-    });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.modal');
-        var instances = M.Modal.init(elems, {});
-    });
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+  {% comment %} <script src="js/init.js"></script> {% endcomment %}
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.scrollspy');
-        var instances = M.ScrollSpy.init(elems, {});
-    });
-
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.fixed-action-btn');
         var instances = M.FloatingActionButton.init(elems, {
             hoverEnabled: false
         });
     });
-</script>
+  </script>
+  </body>
 </html>
