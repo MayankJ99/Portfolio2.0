@@ -86,7 +86,7 @@
           <img src='https://collegehub-442.s3.amazonaws.com/images/mayankjha813_poker.png' class="circle responsive-img" height="250px" width="250px">
         </div> -->
 
-        <div class="col s12 m4 l4">
+        <div class="col s12 m5 l5">
           <div class="hide-on-small-only">
             <img src={{profile.profile_pic.url}} class="circle responsive-img" alt="404" height="500" width='500' >
           </div>
@@ -95,8 +95,8 @@
           </div>
         </div>
 
-        <div class="col s12 m8 l8">
-          <h4 class="black-text">Hi, I'm <strong>Mayank Jha</strong></h4>
+        <div class="col s12 m7 l7" style='padding-top: 20px'>
+          <h3 class="black-text">Hi, I'm <strong>Mayank Jha</strong></h3>
           {% for quote in quotes %}
           <h5 class="black-text">{{quote}}</h5>
           {% endfor %}
@@ -171,13 +171,13 @@
 
         <div class="row">
           <div id="item">
-            <div class="col l6 m12 s12">
-              <div class="">
-                <img src={{project.cover.url}} alt="404" class="responsive-img" id="project_image" style="height: auto; width: 100%;">
+            <div class="col l12 m12 s12 ">
+              <div class="center-align">
+                <img src={{project.cover.url}} alt="404" class="responsive-img" id="project_image" style="height: auto; width: 50%;">
               </div>
             </div>
   
-            <div class="col l6 m12 s12">
+            <div class="col l12 m12 s12">
               <h5 class="black-text" id='Name'>{{project.name}}</h5>
               <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{project.date}}</p>
               <p class="black-text" id="description" style="font-size: 1.2em;">{{project.full_description}}</p>
@@ -383,6 +383,9 @@
             hoverEnabled: false
         });
     });
+
+  
+
   </script>
   </body>
 </html>
