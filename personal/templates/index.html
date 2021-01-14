@@ -137,7 +137,7 @@
     <div class="container" style="padding-top: 20px;">
         {% for work in works %}
         <div id="experience" style="padding-bottom: 25px;">
-                <h5 class="black-text" id='Company'>{{work.company}}</h5>
+                <h5 class="black-text" id='Company'><strong>{{work.company}}</strong></h5>
                 <h6 class="grey-text text-darken-3" id='position'>{{work.position}}</h6>
                 {% if work.end_date %}
                     <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date}} - {{work.end_date}}</p>
@@ -178,7 +178,7 @@
             </div>
   
             <div class="col l6 m12 s12">
-              <h5 class="black-text" id='Name'>{{project.name}}</h5>
+              <h5 class="black-text" id='Name'><strong>{{project.name}}</strong></h5>
               <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{project.date}}</p>
               <p class="black-text" id="description" style="font-size: 1.2em;">{{project.full_description}}</p>
               <br>
@@ -187,7 +187,7 @@
               {% endif %}
 
               {% if project.link%}
-                <a href={{project.link}} class="btn grey darken-4" style="border-radius: 20px;">Github</a>
+                <a href={{project.link}} class="btn grey darken-4" style="border-radius: 20px;">Demo</a>
               {% endif %}
 
               {% if user.is_authenticated%}
