@@ -135,9 +135,9 @@
                 <h5 class="black-text" id='Company'><strong>{{work.company}}</strong></h5>
                 <h6 class="grey-text text-darken-3" id='position'>{{work.position}}</h6>
                 {% if work.end_date %}
-                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date | date:'%m %y'}} - {{work.end_date | date:'%m %y'}}</p>
+                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date | date:'M Y'}} - {{work.end_date | date:'M Y'}}</p>
                 {% else %}
-                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date | date:'%m %y'}}- Present</p>
+                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date | date:'M Y'}}- Present</p>
                 {% endif %}
                 <p class="black-text" id="description" style="font-size: 1.2em; max-width: 70%;">{{work.full_description | linebreaksbr }}</p>
                 {% if user.is_authenticated%}
@@ -174,7 +174,7 @@
   
             <div class="col l6 m12 s12">
               <h5 class="black-text" id='Name'><strong>{{project.name}}</strong></h5>
-              <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{project.date | date:'%m %y' }}</p>
+              <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{project.date | date:'M Y' }}</p>
               <p class="black-text" id="description" style="font-size: 1.2em;">{{project.full_description}}</p>
               <br>
               {% if project.demo %}
