@@ -135,11 +135,11 @@
                 <h5 class="black-text" id='Company'><strong>{{work.company}}</strong></h5>
                 <h6 class="grey-text text-darken-3" id='position'>{{work.position}}</h6>
                 {% if work.end_date %}
-                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date}} - {{work.end_date}}</p>
+                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date | date:'%m %y'}} - {{work.end_date | date:'%m %y'}}</p>
                 {% else %}
-                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date}}- Present</p>
+                    <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date | date:'%m %y'}}- Present</p>
                 {% endif %}
-                <p class="black-text" id="description" style="font-size: 1.2em; max-width: 70%;">{{work.full_description | linebreaks }}</p>
+                <p class="black-text" id="description" style="font-size: 1.2em; max-width: 70%;">{{work.full_description | linebreaksbr }}</p>
                 {% if user.is_authenticated%}
                 <a href={% url 'deleteWork' pk=work.pk %} class="btn grey darken-4" style="border-radius: 20px;">Delete</a>
                 <a href={% url 'updateWork' pk=work.pk %} class="btn grey darken-4" style="border-radius: 20px;">Update</a>
@@ -174,7 +174,7 @@
   
             <div class="col l6 m12 s12">
               <h5 class="black-text" id='Name'><strong>{{project.name}}</strong></h5>
-              <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{project.date}}</p>
+              <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{project.date | date:'%m %y' }}</p>
               <p class="black-text" id="description" style="font-size: 1.2em;">{{project.full_description}}</p>
               <br>
               {% if project.demo %}
