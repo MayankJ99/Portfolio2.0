@@ -33,17 +33,14 @@
   <nav class="transparent z-depth-0" role="navigation" >
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="black-text brand-logo hide-on-med-and-down">MAYANK JHA.</a>
       <ul class="right ">
-       <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#about"
-                           class="black-text">About</a></li>
+       
         <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#experiences"
                            class="black-text">Experience</a></li>
                     <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#projects"
                            class="black-text">Projects</a></li>
                    
-                    <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#skills"
-                           class="black-text">Skills</a></li>
                     <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#contact"
-                           class="black-text">Contact</a></li>
+                           class="black-text">About</a></li>
                     {% if user.is_authenticated %}
                     <li><a style="font-size: 1.2em;" href="{% url 'edit' %}"
                                class="black-text">Edit</a></li>
