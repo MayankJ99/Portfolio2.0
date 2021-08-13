@@ -136,7 +136,7 @@
                 {% else %}
                     <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{work.start_date | date:'M Y'}}- Present</p>
                 {% endif %}
-                <p class="black-text" id="description" style="font-size: 1.2em; max-width: 95%;">{{work.full_description | linebreaksbr }}</p>
+                <p class="black-text" id="description" style="font-size: 1.2em; max-width: 95%; line-height: 120%;">{{work.full_description | linebreaksbr }}</p>
                 {% if user.is_authenticated%}
                 <a href={% url 'deleteWork' pk=work.pk %} class="btn grey darken-4" style="border-radius: 20px;">Delete</a>
                 <a href={% url 'updateWork' pk=work.pk %} class="btn grey darken-4" style="border-radius: 20px;">Update</a>
