@@ -45,7 +45,7 @@ djongo==1.3.1
 docutils==0.15.2
 gunicorn==20.0.4
 hiredis==1.0.1
-hyperlink==19.0.0
+hyperlink==20.0.1
 idna==2.9
 incremental==17.5.0
 isort==4.3.21
