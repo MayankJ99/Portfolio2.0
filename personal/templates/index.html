@@ -30,32 +30,51 @@
 
   <body style='background-color: #FEF8EA'>
 
-  <nav class="transparent z-depth-0" role="navigation" >
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="black-text brand-logo hide-on-med-and-down">MAYANK JHA.</a>
-      <ul class="right ">
+   <nav class="z-depth-4" role="navigation" style='background-color: #353A47'>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"> MJ </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
        
         <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#experiences"
-                           class="black-text">Experience</a></li>
+                           class="">Experience</a></li>
                     <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#projects"
-                           class="black-text">Projects</a></li>
+                           class="">Projects</a></li>
                    
                     <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#contact"
-                           class="black-text">About</a></li>
+                           class="">About</a></li>
                     {% if user.is_authenticated %}
                     <li><a style="font-size: 1.2em;" href="{% url 'edit' %}"
-                               class="black-text">Edit</a></li>
+                               class="">Edit</a></li>
                         <li><a style="font-size: 1.2em;" href="{% url 'personal-logout' %}"
-                               class="black-text">Logout</a></li>
+                               class="">Logout</a></li>
                     {% else %}
                         <li><a style="font-size: 1.2em;" href="{% url 'personal-login' %}"
-                               class="black-text">Login</a></li>
+                               class="">Login</a></li>
 
                     {% endif %}
-
       </ul>
-    
     </div>
   </nav>
+
+  <ul class="sidenav" id="mobile-demo" style='background-color: #353A47'>
+            <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-index' %}#experiences"
+              class="white-text">Experience</a></li>
+        <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-index' %}#projects"
+              class="white-text">Projects</a></li>
+
+        <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-index' %}#contact"
+              class="white-text">About</a></li>
+        {% if user.is_authenticated %}
+        <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'edit' %}"
+                  class="white-text">Edit</a></li>
+          <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-logout' %}"
+                  class="white-text">Logout</a></li>
+        {% else %}
+          <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-login' %}"
+                  class="white-text">Login</a></li>
+
+        {% endif %}
+  </ul>
 
   {% if user.is_authenticated %}
   <div class="fixed-action-btn">
