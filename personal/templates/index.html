@@ -56,25 +56,33 @@
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-demo" style='background-color: #525174'>
+  <ul class="sidenav" id="mobile-demo" style='background-color: #353A47'>
+    <li><div class="user-view">
+      <a href="#user"><img class="circle" style="background-color: #6DB3F2;" src={% static_webp 'mayankjha813_transparent_poker.png' %}></a>
+      <a href="#name"><span class="white-text name">Mayank Jha</span></a>
+      <a href="#email"><span class="white-text email">mayanksjha@gmail.com</span></a>
+    </div></li>
+    <li><div class="container"><div class="divider"></div></div></li>
             <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-index' %}#experiences"
-              class="white-text">Experience</a></li>
+              class="white-text"><i class="material-icons white-text">work</i>Experience</a></li>
         <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-index' %}#projects"
-              class="white-text">Projects</a></li>
+              class="white-text"><i class="material-icons white-text">web_asset</i>Projects</a></li>
 
         <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-index' %}#contact"
-              class="white-text">About</a></li>
+              class="white-text"><i class="material-icons white-text">account_circle</i>About</a></li>
         {% if user.is_authenticated %}
         <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'edit' %}"
-                  class="white-text">Edit</a></li>
+                  class="white-text"><i class="material-icons white-text">mode_edit</i>Edit</a></li>
           <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-logout' %}"
-                  class="white-text">Logout</a></li>
+                  class="white-text"><i class="material-icons white-text">exit_to_app</i>Logout</a></li>
         {% else %}
           <li><a style="font-size: 1.2em; padding-top: 30px" href="{% url 'personal-login' %}"
-                  class="white-text">Login</a></li>
+                  class="white-text"><i class="material-icons white-text">system_update_alt</i>Login</a></li>
 
         {% endif %}
+       
   </ul>
+
 
   {% if user.is_authenticated %}
   <div class="fixed-action-btn">
