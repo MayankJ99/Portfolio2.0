@@ -30,25 +30,25 @@
 
   <body style='background-color: #FEF8EA'>
 
-   <nav class="z-depth-4" role="navigation" style='background-color: #353A47'>
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"> MJ </a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+   <nav class="z-depth-0 transparent black-text" role="navigation" style='background-color: #353A47'>
+    <div class="nav-wrapper container black-text"><a id="logo-container" href="#" class="brand-logo black-text"> MJ </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons black-text">menu</i></a>
       <ul class="right hide-on-med-and-down">
        
-        <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#experiences"
+        <li><a style="font-size: 1.2em;" class="black-text" href="{% url 'personal-index' %}#experiences"
                            class="">Experience</a></li>
-                    <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#projects"
+                    <li><a style="font-size: 1.2em;" class="black-text" href="{% url 'personal-index' %}#projects"
                            class="">Projects</a></li>
                    
-                    <li><a style="font-size: 1.2em;" href="{% url 'personal-index' %}#contact"
+                    <li><a style="font-size: 1.2em;" class="black-text" href="{% url 'personal-index' %}#contact"
                            class="">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a style="font-size: 1.2em;" href="{% url 'edit' %}"
+                    <li><a style="font-size: 1.2em;" class="black-text" href="{% url 'edit' %}"
                                class="">Edit</a></li>
-                        <li><a style="font-size: 1.2em;" href="{% url 'personal-logout' %}"
+                        <li><a style="font-size: 1.2em;" class="black-text" href="{% url 'personal-logout' %}"
                                class="">Logout</a></li>
                     {% else %}
-                        <li><a style="font-size: 1.2em;" href="{% url 'personal-login' %}"
+                        <li><a style="font-size: 1.2em;" class="black-text" href="{% url 'personal-login' %}"
                                class="">Login</a></li>
 
                     {% endif %}
