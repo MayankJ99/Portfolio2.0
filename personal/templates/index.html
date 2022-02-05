@@ -147,7 +147,7 @@
   <div id='about' data-aos="fade-up" class="" style="padding-top: 10px;>
   </section>
 
-  <section id="experiences">
+ {% comment %}   <section id="experiences">
     <div class="container" data-aos="fade-up" >
         <h4 class="black-text">Experiences</h4>
         <hr>
@@ -174,28 +174,28 @@
 
     </div>
 
-  </section>
+  </section> {% endcomment %} 
 
   <section id="projects" >
     <div class="container">
-        <h4 class="black-text">Prominent Projects</h4>
+        <h4 class="black-text">My Works</h4>
         <hr>
 
     </div>
     <div class="container" style="padding-top: 50px;">
-     
+      <div class="row">
      {% for project in projects%}
       <div id="project" style="padding-bottom: 25px;">
-
+        <div class="col l6 m12 s12">
         <div class="row">
           <div id="item">
-            <div class="col l6 m12 s12 ">
+            <div class="col l12 m12 s12 ">
               <div class="center-align">
                 <img src={{project.cover.url}} alt="404" class="responsive-img" id="project_image" style="height: auto; width: 100%; border-radius: 40px;">
               </div>
             </div>
   
-            <div class="col l6 m12 s12">
+            <div class="col l12 m12 s12">
               <h5 class="black-text" id='Name'><strong>{{project.name}}</strong></h5>
               <p class="grey-text text-darken-3" id='dates' style="font-size: 1.2em;">{{project.date | date:'M Y' }}</p>
               <p class="black-text" id="description" style="font-size: 1.2em;">{{project.full_description}}</p>
@@ -214,13 +214,13 @@
               {% endif %}
             </div>
           </div>
-          
-        
+          </div>
         </div>
        
         
       </div>
       {% endfor %}
+        </div>
     
     </div>
 
